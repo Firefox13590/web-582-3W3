@@ -17,7 +17,7 @@ Copiez l'adresse du dépôt à cloner dans la page `GitHub` de votre dépôt. Ce
 2. Testez le site Web sur votre serveur web
 > Naviguez à l'adresse web (`HTTP`) du site web. Si vous avez suivi mes recommandations, l'adresse sera de cette forme : http://localhost:81/web/teetim 
 
-3. Renommez les fichiers `HTML` en utilisant l'extension `.php` à la place de `.html`
+3. Renommez les fichiers `HTML` en utilisant l'extension `.php` à la place de `.php`
 
 4. Corrigez les liens hypertextes dans les document `HTML` pour refléter les changements de nom de fichier fait à l'étape précédente
 
