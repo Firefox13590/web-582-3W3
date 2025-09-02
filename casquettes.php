@@ -1,13 +1,12 @@
 <?php
-// Indiquer la page
-$page = "teeshirts";
+$page = "casquettes";
 
 // Inclure le contenu du fichier entete.inc.php ICI
 include("commun/entete.inc.php");
 ?>
-<main class="page-teeshirts">
+<main class="page-casquettes">
     <article class="amorce">
-        <h1>Nos teeshirts</h1>
+        <h1>Nos casquettes</h1>
     </article>
     <article class="principal">
         À venir...
