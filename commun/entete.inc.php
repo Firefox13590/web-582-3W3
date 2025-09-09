@@ -1,3 +1,23 @@
+<?php
+    // Lire le fichier JSON qui contient les textes.
+    $textesChaineJson =  file_get_contents("i18n/fr.json");
+    // Test
+    // echo $textesChaineJson;
+
+    // Convertir la chaîne de caractères JSON en objet (ou autre structure de données) PHP.
+    $textes = json_decode($textesChaineJson);
+    // Test
+    // echo $textes; // ERREUR : on ne peut pas "imprimer" une structure (comme un objet ou un tableau)
+    // Utiliser les méthodes print_r() ou var_dump() à la place : 
+    // print_r($textes);
+    // var_dump($textes)
+
+    // Quelques raccourcis utiles pour cet objet ($textes)
+    $_ent = $textes->entete;
+    $_pp = $textes->pied2page;
+
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -19,23 +39,24 @@
                 <a href="#">en</a>
                 <a href="#">es</a>
                 <a class="actif" href="#">fr</a>
+                <a href="#">de</a>
+                <a href="#">ar</a>
+                <a href="#">zh</a>
             </nav>
             <nav class="barre-logo">
                 <label for="cc-btn-responsive" class="material-icons burger">menu</label>
-                <a class="logo" href="index.php"><img src="images/logo.png" alt="Accueil"></a>
+                <a class="logo" href="index.php"><img src="images/logo.png" alt="<?= $_ent->logoAlt; ?>"></a>
                 <a class="material-icons panier" href="panier.php">shopping_cart</a>
-                <input class="recherche" type="search" name="motscles" placeholder="Recherche">
+                <input class="recherche" type="search" name="motscles" placeholder="<?= $_ent->recherchePlaceholder; ?>">
             </nav>
             <input type="checkbox" id="cc-btn-responsive">
             <nav class="principale">
                 <label for="cc-btn-responsive" class="menu-controle material-icons">close</label>
-                <a <?php if($page=="teeshirts") { echo ' class="actif" '; } ?> href="teeshirts.php">Teeshirts</a>
-                <a <?php if($page=="casquettes") { echo 'class="actif"'; } ?> href="casquettes.php">Casquettes</a>
-                <a <?php if($page=="hoodies") { echo 'class="actif"'; } ?> href="hoodies.php">Hoodies</a>
+                <a <?php if($page=="teeshirts") { echo ' class="actif" '; } ?> href="teeshirts.php"><?= $_ent->menuTeeshirts; ?></a>
+                <a <?php if($page=="casquettes") { echo 'class="actif"'; } ?> href="casquettes.php"></a>
+                <a <?php if($page=="hoodies") { echo 'class="actif"'; } ?> href="hoodies.php"></a>
                 <span class="separateur"></span>
-                <a <?php if($page=="aide") { echo 'class="actif"'; } ?> href="aide.php">Aide</a>
-                <a <?php if($page=="apropos") { echo 'class="actif"'; } ?> href="apropos.php">À propos de nous</a>
+                <a <?php if($page=="aide") { echo 'class="actif"'; } ?> href="aide.php"></a>
+                <a <?php if($page=="apropos") { echo 'class="actif"'; } ?> href="apropos.php"></a>
             </nav>
         </header>
-
-        <?php echo $page; ?>

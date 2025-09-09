@@ -1,0 +1,24 @@
+{
+    "entete": {
+        "logoAlt": "Accueil",
+        "recherchePlaceholder": "Recherche",
+        "menuTeeshirts": "Teeshirts",
+        "menuCasquettes": "Casquettes",
+        "menuHoodies": "Hoodies",
+        "menuAide": "Aide",
+        "menuNous": "À propos de nous"
+    },
+    
+    "pied2page": {
+
+    },
+    "accueil": {
+
+    },
+    "teeshirts": {
+
+    },
+    "casquettes": {
+        
+    }
+}
