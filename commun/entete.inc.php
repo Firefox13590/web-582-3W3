@@ -1,6 +1,13 @@
 <?php
+    // Récupérer le tableau qui contient tous les paramètres de la requête HTTP (QUERYSTRING)
+    print_r($_GET);
+
+
     // Langue par défaut
     $langue = "fr";
+
+    // Si l'utilisateur clique un des boutons de langues disponibles
+    // $langue = $_GET["lan"];
 
     // Lire le fichier JSON qui contient les textes.
     $textesChaineJson =  file_get_contents("i18n/".$langue.".json");
@@ -40,8 +47,8 @@
     <div class="conteneur">
         <header>
             <nav class="barre-haut">
-                <a class="actif" href="#">fr</a>
-                <a href="#">cr</a>
+                <a href="?lan=fr">fr</a>
+                <a href="?lan=en">en</a>
             </nav>
             <nav class="barre-logo">
                 <label for="cc-btn-responsive" class="material-icons burger">menu</label>
