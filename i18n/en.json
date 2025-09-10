@@ -1,0 +1,46 @@
+{
+    "moduleEntete": {
+        "logoAlt": "Home",
+        "inputSearchPlaceholder": "Search",
+
+        "navTeeshirts": "T-shirts",
+        "navCasquettes": "Caps",
+        "navHoodies": "Hoodies",
+        "navAide": "Help",
+        "navNous": "About us"
+    },
+    "modulePied": {
+        "titreFooter": "teeTIM",
+
+        "sectionAchats": [
+            "Your purchases",
+            "Frequently Asked Questions",
+            "Your package delivery",
+            "Terms of sale",
+            "Privacy policy"
+        ],
+        "sectionAPropos": [
+            "About teeTIM",
+            "The company",
+            "The team",
+            "Jobs"
+        ],
+        "sectionJoindre": [
+            "Contact us",
+            "Toll-free: ",
+            "Email: "
+        ],
+
+        "copyright": "&copy; All rights reserved, teeTIM"
+    },
+
+    "pageAccueil": {
+
+    },
+    "pageTeeshirts": {
+
+    },
+    "pageCasquettes": {
+
+    }
+}
