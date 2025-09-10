@@ -1,6 +1,9 @@
 <?php
+    // Langue par défaut
+    $langue = "fr";
+
     // Lire le fichier JSON qui contient les textes.
-    $textesChaineJson =  file_get_contents("i18n/fr.json");
+    $textesChaineJson =  file_get_contents("i18n/".$langue.".json");
     // Test
     // echo $textesChaineJson;
 
@@ -36,12 +39,8 @@
     <div class="conteneur">
         <header>
             <nav class="barre-haut">
-                <a href="#">en</a>
-                <a href="#">es</a>
                 <a class="actif" href="#">fr</a>
-                <a href="#">de</a>
-                <a href="#">ar</a>
-                <a href="#">zh</a>
+                <a href="#">cr</a>
             </nav>
             <nav class="barre-logo">
                 <label for="cc-btn-responsive" class="material-icons burger">menu</label>
@@ -53,10 +52,10 @@
             <nav class="principale">
                 <label for="cc-btn-responsive" class="menu-controle material-icons">close</label>
                 <a <?php if($page=="teeshirts") { echo ' class="actif" '; } ?> href="teeshirts.php"><?= $_ent->menuTeeshirts; ?></a>
-                <a <?php if($page=="casquettes") { echo 'class="actif"'; } ?> href="casquettes.php"></a>
-                <a <?php if($page=="hoodies") { echo 'class="actif"'; } ?> href="hoodies.php"></a>
+                <a <?php if($page=="casquettes") { echo 'class="actif"'; } ?> href="casquettes.php"><?= $_ent->menuCasquettes; ?></a>
+                <a <?php if($page=="hoodies") { echo 'class="actif"'; } ?> href="hoodies.php"><?= $_ent->menuHoodies; ?></a>
                 <span class="separateur"></span>
-                <a <?php if($page=="aide") { echo 'class="actif"'; } ?> href="aide.php"></a>
-                <a <?php if($page=="apropos") { echo 'class="actif"'; } ?> href="apropos.php"></a>
+                <a <?php if($page=="aide") { echo 'class="actif"'; } ?> href="aide.php"><?= $_ent->menuAide; ?></a>
+                <a <?php if($page=="apropos") { echo 'class="actif"'; } ?> href="apropos.php"><?= $_ent->menuNous; ?></a>
             </nav>
         </header>

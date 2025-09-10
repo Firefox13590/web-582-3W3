@@ -10,7 +10,19 @@
     },
     
     "pied2page": {
-
+        "aproposTitre": "À propos de teeTIM",
+        "aproposCompagnie": "La compagnie",
+        "aproposEquipe": "L'équipe",
+        "aproposEmplois": "Emplois",
+        "achatsTitre": "Vos achats",
+        "achatsFaq": "Foire aux questions",
+        "achatsLivraison": "Livraison de votre colis",
+        "achatsConditions": "Conditions de vente",
+        "achatsConfidentialite": "Politique de confidentialité",
+        "coordonneesTitre": "Nous joindre",
+        "coordonneesTelephone": "Sans frais : ",
+        "coordonneesCourriel": "Courriel : ",
+        "droits": "Tous droits réservés."
     },
     "accueil": {
 
