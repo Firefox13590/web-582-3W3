@@ -6,10 +6,10 @@ include("commun/entete.inc.php");
 ?>
 <main class="page-casquettes">
     <article class="amorce">
-        <h1>Nos casquettes</h1>
+        <h1><?= $_->titre; ?></h1>
     </article>
     <article class="principal">
-        À venir...
+        <p><?= $_->enConstruction; ?></p>
     </article>
 </main>
 <?php

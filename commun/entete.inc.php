@@ -19,6 +19,7 @@
     $_ent = $textes->entete;
     $_pp = $textes->pied2page;
 
+    $_ = $textes->$page;
 
 ?>
 <!DOCTYPE html>

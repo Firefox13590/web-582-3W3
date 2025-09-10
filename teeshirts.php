@@ -7,10 +7,10 @@ include("commun/entete.inc.php");
 ?>
 <main class="page-teeshirts">
     <article class="amorce">
-        <h1>Nos teeshirts</h1>
+        <h1><?= $_->titre; ?></h1>
     </article>
     <article class="principal">
-        À venir...
+        <p><?= $_->enConstruction; ?></p>
     </article>
 </main>
 <?php
