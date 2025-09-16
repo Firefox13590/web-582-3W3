@@ -25,7 +25,7 @@
             "The team",
             "Jobs"
         ],
-        "sectionJoindre": [
+        "sectionCoordonnees": [
             "Contact us",
             "Toll-free: ",
             "Email: "
@@ -35,12 +35,19 @@
     },
 
     "pageAccueil": {
+        "amorceH1": "T-shirts, hoodies, and caps made in Quebec 💯",
+        "amorceH2": "Designed at TIM with ❤️",
+        "amorceH4": "/** with a little help from DALL-E 😉 **/",
 
+        "principalP1": "Today, the T-shirt is an essential piece of clothing in everyone’s wardrobe. And in an era where environmental issues matter more than ever, we prefer T-shirts made in Quebec to reduce environmental impact and highlight local craftsmanship.",
+        "principalP2": "V-neck T-shirt, crew neck, loose or fitted, short-sleeved or long-sleeved for those who get cold easily, plain or patterned to style an outfit… The T-shirt is available in a variety of colors, styles, and patterns."
     },
     "pageTeeshirts": {
-
+        "titre": "Our T-shirts",
+        "enConstruction": "Coming soon..."
     },
     "pageCasquettes": {
-
+        "titre": "Our caps",
+        "enConstruction": "Coming soon..."
     }
 }

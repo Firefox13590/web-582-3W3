@@ -1,3 +1,46 @@
+<?php 
+    /** INTERECTIVITE DE CHANGEMENT DE LANGUE */
+
+    // langue par défaut
+    $langue = "fr";
+
+    // recupere array assosiatif (index nommes) avec tous param requete http (querystring)
+    // print_r($_GET);
+    // recuperer choix langue dans cookie si user a fait choix auparavant
+    // si index abscent, "fr" par defaut
+    if(isset($_COOKIE["lan"])){
+        $langue = $_COOKIE["lan"];
+    }
+
+    // langue dynamique (apres clique sur btn de langue)
+    // si index abscent, "fr" par defaut
+    if(isset($_GET["lan"])){
+        $langue = $_GET['lan'];
+        // retenir choix de langue dans temoin HTTP (cookie)
+        setcookie("lan", $langue, time()+60*60*24*30);
+    }
+
+    // lire fichier json
+    $json = file_get_contents("i18n/$langue.json"); 
+    // convertir en objet (ou autre structure) php
+    $obj = json_decode($json); 
+    // erreur: echo print seulement les strings, pas les structures/objets
+    // utiliser print_r() ou var_dump() plutot
+    // echo $obj;
+    // print_r($obj);
+    // var_dump($obj);
+
+    // raccourcis utiles pour objet
+    $obj_ent = $obj->moduleEntete;
+    $obj_pied = $obj->modulePied;
+
+    // raccourcis dynamique pour page
+    $propertyPageName = "page".ucfirst($page);
+    // echo $propertyPageName;
+    $obj_page = $obj->$propertyPageName;
+    // print_r($obj_page);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -16,45 +59,46 @@
     <div class="conteneur">
         <header>
             <nav class="barre-haut">
-                <!-- <a href="#">en</a>
-                <a href="#">es</a>
-                <a class="actif" href="#">fr</a> -->
-                <?php 
-                    // langue par défaut
-                    $langue = "fr";
-                    // lire fichier json
-                    $json = file_get_contents("i18n/$langue.json"); 
-                    // convertir en objet (ou autre structure) php
-                    $obj = json_decode($json); 
-                    // erreur: echo print seulement les strings, pas les structures/objets
-                    // utiliser print_r() ou var_dump() plutot
-                    // echo $obj;
-                    // print_r($obj);
-                    // var_dump($obj);
-
-                    // raccourcis utiles pour objet
-                    $obj_ent = $obj->moduleEntete;
-                    $obj_pied = $obj->modulePied;
-
-                    $propertyPageName = "page".ucfirst($page);
-                    // echo $propertyPageName;
-                    $obj_page = $obj->$propertyPageName;
-                    // print_r($obj_page);
-
+                <!-- <a href="?lan=fr">fr</a>
+                <a href="?lan=en">en</a>
+                <a href="?lan=es">es</a> -->
+                <!-- generer btns choix langue dynamiquement -->
+                <?php
                     // dossier i18n
                     $i18nFolder = scandir("i18n");
                     // print_r($i18nFolder);
+
+                    // methode 1 de faire html avec php
+                    // prof dit que c caca, mais perso je prefere
                     for($i = 2; $i < count($i18nFolder); $i++){
+                        // echo "Ma balz itched $i times";
                         $langueActive = "";
                         $langueFichier = basename($i18nFolder[$i], '.json');
+                        // echo $langueFichier;
                         if($langue === $langueFichier) $langueActive = 'class="actif"';
                         // echo $langueActive;
-                        // echo "Ma balz itched $i times";
-                        // echo $langueFichier;
-                        echo "<a $langueActive>$langueFichier</a> ";
-
+                        $nomLocale = locale_get_display_name($langueFichier, $langueFichier);
+                        // echo $nomLocale;
+                        echo "<a href='?lan=$langueFichier' title='$nomLocale' $langueActive>$langueFichier</a> ";
                     }
                 ?>
+
+                <!-- methode 2 de faire html avec php -->
+                <!-- prof dit que c mieux pask ca empeche de faire du phtml fucked up, mais perso je trouve ca caca -->
+                <!-- < for($i = 2; $i < count($i18nFolder); $i++){
+                    $langueActive = "";
+                    $langueFichier = basename($i18nFolder[$i], '.json');
+                    // echo $langueFichier;
+                    if($langue === $langueFichier) $langueActive = 'class="actif"';
+                    // echo $langueActive;
+                    $nomLocale = locale_get_display_name($langueFichier, $langueFichier); ?>
+                    <a 
+                    href="?lan=< $langueFichier; ?>"
+                    title="< $nomLocale; ?>"
+                    < $langueActive; ?>>
+                        < $langueFichier; ?>
+                    </a>
+                < }; ?> -->
             </nav>
             <nav class="barre-logo">
                 <label for="cc-btn-responsive" class="material-icons burger">menu</label>
