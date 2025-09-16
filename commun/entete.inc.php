@@ -1,14 +1,36 @@
 <?php
+/*********************** LECTURE DYNAMIQUE DES LANGUES DISPOS *********/
+$languesDisponibles = [];
+$contenuI18n = scandir("i18n");
+// Améliorer ce code (à l'aide de Copilot ou vos propres idées).
+foreach ($contenuI18n as $nomFichier) {
+    if($nomFichier != "." && $nomFichier != "..") {
+        $languesDisponibles[] = substr($nomFichier, 0, 2);
+    }
+}
+
+/*********************** INTERACTIVITÉ DE CHANGEMENT DE LANGUE ********/
     // Récupérer le tableau qui contient tous les paramètres de la requête HTTP (QUERYSTRING)
-    print_r($_GET);
-
-
+    
     // Langue par défaut
     $langue = "fr";
 
-    // Si l'utilisateur clique un des boutons de langues disponibles
-    // $langue = $_GET["lan"];
+    // Si l'utilisateur a fait un choix de langue dans le passé, il faut 
+    // l'utiliser (donc il faut vérifier s'il y a un témoin HTTP nommé 
+    // "langueChoisie")
+    if(isset($_COOKIE["langueChoisie"])) {
+        $langue = $_COOKIE["langueChoisie"];
+    }
 
+    // Si l'utilisateur clique un des boutons de langues disponibles
+    if(isset($_GET["lan"])) {
+        $langue = $_GET["lan"];
+        // Retenir le choix de langue dans un témoin HTTP (cookie)
+        // Date d'expiration dans le futur (3 mois)
+        setcookie("langueChoisie", $langue, time()+365*24*60*60);
+    }
+
+/********************** EXTERNALISATION DES TEXTES STATIQUES **********/
     // Lire le fichier JSON qui contient les textes.
     $textesChaineJson =  file_get_contents("i18n/".$langue.".json");
     // Test
@@ -47,8 +69,22 @@
     <div class="conteneur">
         <header>
             <nav class="barre-haut">
-                <a href="?lan=fr">fr</a>
-                <a href="?lan=en">en</a>
+                <!-- Générer les boutons de choix de langue dynamiquement en PHP -->
+                
+                <?php
+                    // Méthode 1 : moins désirable
+                    // foreach ($languesDisponibles as $codeLangue) {
+                    //     echo "<a href='?lan=$codeLangue'>$codeLangue</a>";
+                    // }
+                ?>
+                <?php foreach($languesDisponibles as $codeLangue) {  ?>
+                    <a 
+                        <?php if($codeLangue==$langue) { echo ' class="actif" '; } ?>  
+                        href="?lan=<?= $codeLangue; ?>"
+                    >
+                        <?= $codeLangue; ?>
+                    </a>
+                <?php } ?>
             </nav>
             <nav class="barre-logo">
                 <label for="cc-btn-responsive" class="material-icons burger">menu</label>
