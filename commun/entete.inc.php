@@ -18,12 +18,16 @@ foreach ($contenuI18n as $nomFichier) {
     // Si l'utilisateur a fait un choix de langue dans le passé, il faut 
     // l'utiliser (donc il faut vérifier s'il y a un témoin HTTP nommé 
     // "langueChoisie")
-    if(isset($_COOKIE["langueChoisie"])) {
+    // Remarquez la condition additionnelle pour valider que la langue
+    // choisie est bien dans la liste des langues disponibles.
+    if(isset($_COOKIE["langueChoisie"]) && in_array($_COOKIE["langueChoisie"], $languesDisponibles)) {
         $langue = $_COOKIE["langueChoisie"];
     }
 
     // Si l'utilisateur clique un des boutons de langues disponibles
-    if(isset($_GET["lan"])) {
+    // Remarquez la condition additionnelle pour valider que la langue
+    // choisie est bien dans la liste des langues disponibles.
+    if(isset($_GET["lan"]) && in_array($_GET["lan"], $languesDisponibles)) {
         $langue = $_GET["lan"];
         // Retenir le choix de langue dans un témoin HTTP (cookie)
         // Date d'expiration dans le futur (3 mois)
@@ -77,14 +81,14 @@ foreach ($contenuI18n as $nomFichier) {
                     //     echo "<a href='?lan=$codeLangue'>$codeLangue</a>";
                     // }
                 ?>
-                <?php foreach($languesDisponibles as $codeLangue) {  ?>
+                <?php foreach($languesDisponibles as $codeLangue) :  ?>
                     <a 
-                        <?php if($codeLangue==$langue) { echo ' class="actif" '; } ?>  
+                        <?= $langue==$codeLangue ? 'class="actif"' : '' ?>
                         href="?lan=<?= $codeLangue; ?>"
                     >
                         <?= $codeLangue; ?>
                     </a>
-                <?php } ?>
+                <?php endforeach ?>
             </nav>
             <nav class="barre-logo">
                 <label for="cc-btn-responsive" class="material-icons burger">menu</label>
@@ -95,11 +99,11 @@ foreach ($contenuI18n as $nomFichier) {
             <input type="checkbox" id="cc-btn-responsive">
             <nav class="principale">
                 <label for="cc-btn-responsive" class="menu-controle material-icons">close</label>
-                <a <?php if($page=="teeshirts") { echo ' class="actif" '; } ?> href="teeshirts.php"><?= $_ent->menuTeeshirts; ?></a>
-                <a <?php if($page=="casquettes") { echo 'class="actif"'; } ?> href="casquettes.php"><?= $_ent->menuCasquettes; ?></a>
-                <a <?php if($page=="hoodies") { echo 'class="actif"'; } ?> href="hoodies.php"><?= $_ent->menuHoodies; ?></a>
+                <a <?= $page=="teeshirts" ? ' class="actif" ' : '' ?> href="teeshirts.php"><?= $_ent->menuTeeshirts; ?></a>
+                <a <?= $page=="casquettes" ? ' class="actif" ' : '' ?> href="casquettes.php"><?= $_ent->menuCasquettes; ?></a>
+                <a <?= $page=="hoodies" ? ' class="actif" ' : '' ?> href="hoodies.php"><?= $_ent->menuHoodies; ?></a>
                 <span class="separateur"></span>
-                <a <?php if($page=="aide") { echo 'class="actif"'; } ?> href="aide.php"><?= $_ent->menuAide; ?></a>
-                <a <?php if($page=="apropos") { echo 'class="actif"'; } ?> href="apropos.php"><?= $_ent->menuNous; ?></a>
+                <a <?= $page=="aide" ? ' class="actif" ' : '' ?> href="aide.php"><?= $_ent->menuAide; ?></a>
+                <a <?= $page=="apropos" ? ' class="actif" ' : '' ?> href="apropos.php"><?= $_ent->menuNous; ?></a>
             </nav>
         </header>
