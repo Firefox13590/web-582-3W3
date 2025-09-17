@@ -4,17 +4,24 @@
     // langue par défaut
     $langue = "fr";
 
+    // dossier i18n
+    $i18nFolder = scandir("i18n");
+    // print_r($i18nFolder);
+
     // recupere array assosiatif (index nommes) avec tous param requete http (querystring)
     // print_r($_GET);
     // recuperer choix langue dans cookie si user a fait choix auparavant
-    // si index abscent, "fr" par defaut
-    if(isset($_COOKIE["lan"])){
+    // check si langue dans cookie est disponible
+    if(isset($_COOKIE["lan"]) && in_array($_COOKIE["lan"].".json", $i18nFolder)){
         $langue = $_COOKIE["lan"];
     }
 
     // langue dynamique (apres clique sur btn de langue)
     // si index abscent, "fr" par defaut
-    if(isset($_GET["lan"])){
+    // check si langue dans url est disponible
+    // echo $_GET["lan"];
+    // print_r(in_array($_GET["lan"], $i18nFolder));
+    if(isset($_GET["lan"]) && in_array($_GET["lan"].".json", $i18nFolder)){
         $langue = $_GET['lan'];
         // retenir choix de langue dans temoin HTTP (cookie)
         setcookie("lan", $langue, time()+60*60*24*30);
@@ -65,7 +72,7 @@
                 <!-- generer btns choix langue dynamiquement -->
                 <?php
                     // dossier i18n
-                    $i18nFolder = scandir("i18n");
+                    // $i18nFolder = scandir("i18n");
                     // print_r($i18nFolder);
 
                     // methode 1 de faire html avec php
@@ -85,7 +92,8 @@
 
                 <!-- methode 2 de faire html avec php -->
                 <!-- prof dit que c mieux pask ca empeche de faire du phtml fucked up, mais perso je trouve ca caca -->
-                <!-- < for($i = 2; $i < count($i18nFolder); $i++){
+                <!-- quanf utilise blocs php decolles comme ca, on peut remplacer acollades ["{", "}"] par [":", "endforeach"] -->
+                <!-- < for($i = 2; $i < count($i18nFolder); $i++) :
                     $langueActive = "";
                     $langueFichier = basename($i18nFolder[$i], '.json');
                     // echo $langueFichier;
@@ -98,7 +106,7 @@
                     < $langueActive; ?>>
                         < $langueFichier; ?>
                     </a>
-                < }; ?> -->
+                < endforeach; ?> -->
             </nav>
             <nav class="barre-logo">
                 <label for="cc-btn-responsive" class="material-icons burger">menu</label>
@@ -110,11 +118,11 @@
             <input type="checkbox" id="cc-btn-responsive">
             <nav class="principale">
                 <label for="cc-btn-responsive" class="menu-controle material-icons">close</label>
-                <a <?php if($page == "teeshirts"){echo "class='actif'";} ?> href="teeshirts.php"><?= $obj_ent->navTeeshirts; ?></a>
-                <a <?php if($page == "casquettes"){echo "class='actif'";} ?> href="casquettes.php"><?= $obj_ent->navCasquettes; ?></a>
-                <a <?php if($page == "hoodies"){echo "class='actif'";} ?> href="hoodies.php"><?= $obj_ent->navHoodies; ?></a>
+                <a <?= $page == "teeshirts" ? "class='actif'" : ""; ?> href="teeshirts.php"><?= $obj_ent->navTeeshirts; ?></a>
+                <a <?= $page == "casquettes" ? "class='actif'" : ""; ?> href="casquettes.php"><?= $obj_ent->navCasquettes; ?></a>
+                <a <?= $page == "hoodies" ? "class='actif'" : ""; ?> href="hoodies.php"><?= $obj_ent->navHoodies; ?></a>
                 <span class="separateur"></span>
-                <a <?php if($page == "aide"){echo "class='actif'";} ?> href="aide.php"><?= $obj_ent->navAide; ?></a>
-                <a <?php if($page == "apropos"){echo "class='actif'";} ?> href="apropos.php"><?= $obj_ent->navNous; ?></a>
+                <a <?= $page == "aide" ? "class='actif'" : ""; ?> href="aide.php"><?= $obj_ent->navAide; ?></a>
+                <a <?= $page == "apropos" ? "class='actif'" : ""; ?> href="apropos.php"><?= $obj_ent->navNous; ?></a>
             </nav>
         </header>
