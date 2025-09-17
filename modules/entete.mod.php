@@ -1,55 +1,22 @@
-<?php 
-    /** INTERECTIVITE DE CHANGEMENT DE LANGUE */
+<?php
+// inclure fichier librairie i18n
+include("lib/i18n.lib.php");
 
-    // langue par défaut
-    $langue = "fr";
+// obtenir les langues disponibles
+$languesDisponibles = obtenirLanguesDisponibles();
+// print_r($languesDisponibles);
 
-    // dossier i18n
-    $i18nFolder = scandir("i18n");
-    // print_r($i18nFolder);
+// determine la langue a utiliser
+$langue = determinerCodeLangue($languesDisponibles);
+// print_r($langue);
 
-    // recupere array assosiatif (index nommes) avec tous param requete http (querystring)
-    // print_r($_GET);
-    // recuperer choix langue dans cookie si user a fait choix auparavant
-    // check si langue dans cookie est disponible
-    if(isset($_COOKIE["lan"]) && in_array($_COOKIE["lan"].".json", $i18nFolder)){
-        $langue = $_COOKIE["lan"];
-    }
-
-    // langue dynamique (apres clique sur btn de langue)
-    // si index abscent, "fr" par defaut
-    // check si langue dans url est disponible
-    // echo $_GET["lan"];
-    // print_r(in_array($_GET["lan"], $i18nFolder));
-    if(isset($_GET["lan"]) && in_array($_GET["lan"].".json", $i18nFolder)){
-        $langue = $_GET['lan'];
-        // retenir choix de langue dans temoin HTTP (cookie)
-        setcookie("lan", $langue, time()+60*60*24*30);
-    }
-
-    // lire fichier json
-    $json = file_get_contents("i18n/$langue.json"); 
-    // convertir en objet (ou autre structure) php
-    $obj = json_decode($json); 
-    // erreur: echo print seulement les strings, pas les structures/objets
-    // utiliser print_r() ou var_dump() plutot
-    // echo $obj;
-    // print_r($obj);
-    // var_dump($obj);
-
-    // raccourcis utiles pour objet
-    $obj_ent = $obj->moduleEntete;
-    $obj_pied = $obj->modulePied;
-
-    // raccourcis dynamique pour page
-    $propertyPageName = "page".ucfirst($page);
-    // echo $propertyPageName;
-    $obj_page = $obj->$propertyPageName;
-    // print_r($obj_page);
+// recupere textes statiques et les affecte a des raccourcis via array destructuring
+[$obj_ent, $obj_pied, $obj_page] = obtenirTextesStatiques($langue, $page);
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,6 +29,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="images/favicon.png" />
 </head>
+
 <body>
     <div class="conteneur">
         <header>
@@ -71,23 +39,23 @@
                 <a href="?lan=es">es</a> -->
                 <!-- generer btns choix langue dynamiquement -->
                 <?php
-                    // dossier i18n
-                    // $i18nFolder = scandir("i18n");
-                    // print_r($i18nFolder);
+                // dossier i18n
+                $i18nFolder = scandir("i18n");
+                // print_r($i18nFolder);
 
-                    // methode 1 de faire html avec php
-                    // prof dit que c caca, mais perso je prefere
-                    for($i = 2; $i < count($i18nFolder); $i++){
-                        // echo "Ma balz itched $i times";
-                        $langueActive = "";
-                        $langueFichier = basename($i18nFolder[$i], '.json');
-                        // echo $langueFichier;
-                        if($langue === $langueFichier) $langueActive = 'class="actif"';
-                        // echo $langueActive;
-                        $nomLocale = locale_get_display_name($langueFichier, $langueFichier);
-                        // echo $nomLocale;
-                        echo "<a href='?lan=$langueFichier' title='$nomLocale' $langueActive>$langueFichier</a> ";
-                    }
+                // methode 1 de faire html avec php
+                // prof dit que c caca, mais perso je prefere
+                for ($i = 2; $i < count($i18nFolder); $i++) {
+                    // echo "Ma balz itched $i times";
+                    $langueActive = "";
+                    $langueFichier = basename($i18nFolder[$i], '.json');
+                    // echo $langueFichier;
+                    if ($langue === $langueFichier) $langueActive = 'class="actif"';
+                    // echo $langueActive;
+                    $nomLocale = locale_get_display_name($langueFichier, $langueFichier);
+                    // echo $nomLocale;
+                    echo "<a href='?lan=$langueFichier' title='$nomLocale' $langueActive>$langueFichier</a> ";
+                }
                 ?>
 
                 <!-- methode 2 de faire html avec php -->
