@@ -1,0 +1,47 @@
+{
+    "entete": {
+        "logoAlt": "Hjem",
+        "recherchePlaceholder": "Søk",
+        "menuTeeshirts": "T-skjorter",
+        "menuCasquettes": "Caps",
+        "menuHoodies": "Hettegensere",
+        "menuAide": "Hjelp",
+        "menuNous": "Om oss"
+    },
+    "pied2page": {
+        "aproposTitre": "Om teeTIM",
+        "aproposCompagnie": "Selskapet",
+        "aproposEquipe": "Teamet",
+        "aproposEmplois": "Jobber",
+        "achatsTitre": "Dine kjøp",
+        "achatsFaq": "Vanlige spørsmål",
+        "achatsLivraison": "Levering av pakken din",
+        "achatsConditions": "Salgsbetingelser",
+        "achatsConfidentialite": "Personvernerklæring",
+        "coordonneesTitre": "Kontakt oss",
+        "coordonneesTelephone": "Gratis: ",
+        "coordonneesCourriel": "E-post: ",
+        "droits": "Alle rettigheter reservert."
+    },
+    "accueil": {
+        "metaTitre": "teeTIM // naturlig fiber ... kunstig design",
+        "metaDesc": "Hjemmeside for klesdesigneren 100% laget i Québec, designet av TIM-studenter med AI-genererte design, og laget med 100% naturlige og økologiske fibre.",
+        "amorceH1": "T-skjorter, hettegensere og caps laget i Québec 💯",
+        "amorceH2": "Designet på TIM med ❤️",
+        "amorceH4": "/** med litt hjelp fra DALL-E 😉 **/",
+        "para1": "I dag er t-skjorten et uunnværlig plagg i alles garderobe. Og i en tid hvor miljøspørsmål er viktigere enn noen gang, foretrekker vi t-skjorter laget i Québec for å redusere miljøpåvirkningen og fremme lokal håndverk.",
+        "para2": "V-hals t-skjorte, rund hals, løs eller tettsittende, korte eller lange ermer for de som fryser, ensfarget eller mønstret for å style et antrekk… T-skjorten finnes i en rekke farger, stiler og mønstre."
+    },
+    "teeshirts": {
+        "metaTitre": "teeTIM // Oppdag våre 100% naturlige t-skjorter designet i Québec",
+        "metaDesc": "Oppdag vår kolleksjon av 100% naturlige t-skjorter, designet i Québec av TIM-studenter, som kombinerer stil, komfort og respekt for miljøet.",
+        "titre": "Våre t-skjorter",
+        "enConstruction": "Kommer snart..."
+    },
+    "casquettes": {
+        "metaTitre": "teeTIM // Oppdag våre 100% naturlige caps designet i Québec",
+        "metaDesc": "Oppdag våre caps laget lokalt i Québec, som kombinerer håndverk, høy kvalitet og engasjement for lokal handel.",
+        "titre": "Våre caps",
+        "enConstruction": "Kommer snart..."
+    }
+}

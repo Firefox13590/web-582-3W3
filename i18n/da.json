@@ -1,0 +1,47 @@
+{
+    "entete": {
+        "logoAlt": "Hjem",
+        "recherchePlaceholder": "Søg",
+        "menuTeeshirts": "T-shirts",
+        "menuCasquettes": "Kasketter",
+        "menuHoodies": "Hættetrøjer",
+        "menuAide": "Hjælp",
+        "menuNous": "Om os"
+    },
+    "pied2page": {
+        "aproposTitre": "Om teeTIM",
+        "aproposCompagnie": "Virksomheden",
+        "aproposEquipe": "Teamet",
+        "aproposEmplois": "Jobs",
+        "achatsTitre": "Dine køb",
+        "achatsFaq": "Ofte stillede spørgsmål",
+        "achatsLivraison": "Levering af din pakke",
+        "achatsConditions": "Salgsbetingelser",
+        "achatsConfidentialite": "Privatlivspolitik",
+        "coordonneesTitre": "Kontakt os",
+        "coordonneesTelephone": "Gratis: ",
+        "coordonneesCourriel": "E-mail: ",
+        "droits": "Alle rettigheder forbeholdes."
+    },
+    "accueil": {
+        "metaTitre": "teeTIM // naturlig fiber ... kunstigt design",
+        "metaDesc": "Hjemmeside for tøjdesigneren 100% lavet i Québec, designet af TIM-studerende med AI-genererede designs og fremstillet med 100% naturlige og økologiske fibre.",
+        "amorceH1": "T-shirts, hættetrøjer og kasketter fremstillet i Québec 💯",
+        "amorceH2": "Designet på TIM med ❤️",
+        "amorceH4": "/** med lidt hjælp fra DALL-E 😉 **/",
+        "para1": "I dag er t-shirten et uundværligt stykke tøj i alles garderobe. Og i en tid, hvor miljøspørgsmål er vigtigere end nogensinde, foretrækker vi t-shirts fremstillet i Québec for at reducere miljøpåvirkningen og fremme lokalt håndværk.",
+        "para2": "V-hals t-shirt, rund hals, løs eller tætsiddende, korte eller lange ærmer til de kuldskære, ensfarvet eller mønstret for at style et outfit… T-shirten fås i en række farver, stilarter og mønstre."
+    },
+    "teeshirts": {
+        "metaTitre": "teeTIM // Opdag vores 100% naturlige t-shirts designet i Québec",
+        "metaDesc": "Opdag vores kollektion af 100% naturlige t-shirts, designet i Québec af TIM-studerende, som kombinerer stil, komfort og respekt for miljøet.",
+        "titre": "Vores t-shirts",
+        "enConstruction": "Kommer snart..."
+    },
+    "casquettes": {
+        "metaTitre": "teeTIM // Opdag vores 100% naturlige kasketter designet i Québec",
+        "metaDesc": "Opdag vores kasketter fremstillet lokalt i Québec, som kombinerer håndværk, høj kvalitet og engagement i lokal handel.",
+        "titre": "Vores kasketter",
+        "enConstruction": "Kommer snart..."
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "entete": {
+        "logoAlt": "Startseite",
+        "recherchePlaceholder": "Suche",
+        "menuTeeshirts": "T-Shirts",
+        "menuCasquettes": "Caps",
+        "menuHoodies": "Kapuzensweatshirts",
+        "menuAide": "Hilfe",
+        "menuNous": "Über uns"
+    },
+    
+    "pied2page": {
+        "aproposTitre": "Über teeTIM",
+        "aproposCompagnie": "Das Unternehmen",
+        "aproposEquipe": "Das Team",
+        "aproposEmplois": "Jobs",
+        "achatsTitre": "Ihre Einkäufe",
+        "achatsFaq": "Häufig gestellte Fragen",
+        "achatsLivraison": "Lieferung Ihres Pakets",
+        "achatsConditions": "Verkaufsbedingungen",
+        "achatsConfidentialite": "Datenschutzrichtlinie",
+        "coordonneesTitre": "Kontaktieren Sie uns",
+        "coordonneesTelephone": "Kostenlos: ",
+        "coordonneesCourriel": "E-Mail: ",
+        "droits": "Alle Rechte vorbehalten."
+    },
+    "accueil": {
+        "metaTitre": "teeTIM // natürliche Faser ... künstliches Design",
+        "metaDesc": "Startseite des Bekleidungsdesigners, 100% hergestellt in Québec, entworfen von TIM-Studierenden mit KI-generierten Designs und gefertigt aus 100% natürlichen und biologischen Fasern.",
+        "amorceH1": "T-Shirts, Kapuzensweatshirts und Caps hergestellt in Québec 💯",
+        "amorceH2": "Entworfen bei TIM mit ❤️",
+        "amorceH4": "/** mit ein wenig Hilfe von DALL-E 😉 **/",
+        "para1": "Heute ist das T-Shirt ein unverzichtbares Kleidungsstück in jedem Kleiderschrank. Und in einer Zeit, in der Umweltfragen wichtiger denn je sind, bevorzugen wir T-Shirts, die in Québec hergestellt werden, um die Umweltbelastung zu reduzieren und lokales Handwerk zu fördern.",
+        "para2": "V-Ausschnitt, Rundhals, locker oder eng, mit kurzen oder langen Ärmeln für die Frostigen, einfarbig oder gemustert für einen stylischen Look… Das T-Shirt ist in einer Vielzahl von Farben, Stilen und Mustern erhältlich."
+    },
+    "teeshirts": {
+        "metaTitre": "teeTIM // Entdecken Sie unsere 100% natürlichen T-Shirts aus Québec",
+        "metaDesc": "Entdecken Sie unsere Kollektion von 100% natürlichen T-Shirts, entworfen in Québec von TIM-Studierenden, die Stil, Komfort und Umweltbewusstsein vereinen.",
+        "titre": "Unsere T-Shirts",
+        "enConstruction": "Demnächst verfügbar..."
+    },
+    "casquettes": {
+        "metaTitre": "teeTIM // Entdecken Sie unsere 100% natürlichen Caps aus Québec",
+        "metaDesc": "Entdecken Sie unsere Caps, lokal hergestellt in Québec, die handwerkliches Können, höchste Qualität und Engagement für lokale Unternehmen vereinen.",
+        "titre": "Unsere Caps",
+        "enConstruction": "Demnächst verfügbar..."
+    }
+}
