@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Librairie des fonctions associées au module d'internationnalisation (i18n)
  */
