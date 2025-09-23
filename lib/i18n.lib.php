@@ -42,13 +42,14 @@ function determinerCodeLangue($languesDisponibles)
     $langue = "fr";
 
     // recupere array assosiatif (index nommes) avec tous param requete http (querystring)
-    if (isset($_COOKIE["lan"]) && in_array($_COOKIE["lan"] . ".json", $languesDisponibles)) {
+    if (isset($_COOKIE["lan"]) && in_array($_COOKIE["lan"], $languesDisponibles)) {
         $langue = $_COOKIE["lan"];
     }
 
     // langue dynamique (apres clique sur btn de langue)
-    if (isset($_GET["lan"]) && in_array($_GET["lan"] . ".json", $languesDisponibles)) {
+    if (isset($_GET["lan"]) && in_array($_GET["lan"], $languesDisponibles)) {
         $langue = $_GET['lan'];
+        // echo 'updated language';
         // retenir choix de langue dans temoin HTTP (cookie)
         setcookie("lan", $langue, time() + 60 * 60 * 24 * 30);
     }

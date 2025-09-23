@@ -35,6 +35,9 @@
     },
 
     "pageAccueil": {
+        "metaTitre": "teeTIM // fibre naturelle ... conception artificielle",
+        "metaDesc": "Page d'accueil du concepteur de vêtements 100% fait au Québec, conçus par les étudiants du TIM à l'aide de designs produits par intelligence artificielle, et fabriqués avec des fibres 100% naturelles et biologiques.",
+
         "amorceH1": "Teeshirts, hoodies, et casquettes fabriqués au Québec 💯",
         "amorceH2": "Conçus au TIM avec ❤️",
         "amorceH4": "/** avec un p'tit peu d'aide de DALL-E 😉 **/",
@@ -43,10 +46,16 @@
         "principalP2": "Teeshirt en V, col rond, ample ou ajusté, à manches courtes ou à manches longues pour les plus frileux, uni ou à motifs pour styliser une tenue… Le teeshirt est disponible dans une variété de couleurs, de styles et de motifs."
     },
     "pageTeeshirts": {
+        "metaTitre": "teeTIM // Découvrez notre collection de teeshirts 100% naturels et conçus au Québec",
+        "metaDesc": "Découvrez notre collection de teeshirts 100% naturels, conçus au Québec par les étudiants du TIM, alliant créativité et respect de l'environnement.",
+
         "titre": "Nos teeshirts",
         "enConstruction": "À venir..."
     },
     "pageCasquettes": {
+        "metaTitre": "teeTIM // Découvrez notre collection de casquettes 100% naturelles et conçues au Québec",
+        "metaDesc": "Explorez notre sélection de casquettes 100% naturelles, imaginées et fabriquées au Québec par les étudiants du TIM, alliant style, confort et respect de l'environnement.",
+
         "titre": "Nos casquettes",
         "enConstruction": "À venir..."
     }

@@ -35,6 +35,9 @@
     },
 
     "pageAccueil": {
+        "metaTitre": "teeTIM // fibra natural ... diseño artificial",
+        "metaDesc": "Página de inicio del diseñador de ropa 100% hecha en Quebec, diseñada por estudiantes de TIM utilizando diseños generados por IA, y fabricada con fibras 100% naturales y orgánicas.",
+
         "amorceH1": "Camisetas, sudaderas y gorras hechas en Quebec 💯",
         "amorceH2": "Diseñadas en TIM con ❤️",
         "amorceH4": "/** con un poco de ayuda de DALL-E 😉 **/",
@@ -43,10 +46,16 @@
         "principalP2": "Camiseta de cuello en V, cuello redondo, holgada o ajustada, de manga corta o larga para quienes sienten frío fácilmente, lisa o estampada para combinar con tu atuendo… La camiseta está disponible en una variedad de colores, estilos y patrones."
     },
     "pageTeeshirts": {
+        "metaTitre": "teeTIM // Descubre nuestra colección de camisetas 100% naturales diseñadas en Quebec",
+        "metaDesc": "Descubre nuestra colección de camisetas 100% naturales, diseñadas en Quebec por estudiantes de TIM, combinando creatividad y respeto por el medio ambiente.",
+
         "titre": "Nuestras camisetas",
         "enConstruction": "Próximamente..."
     },
     "pageCasquettes": {
+        "metaTitre": "teeTIM // Descubre nuestra colección de gorras 100% naturales diseñadas en Quebec",
+        "metaDesc": "Explora nuestra selección de gorras 100% naturales, imaginadas y fabricadas en Quebec por estudiantes de TIM, combinando estilo, comodidad y respeto por el medio ambiente.",
+
         "titre": "Nuestras gorras",
         "enConstruction": "Próximamente..."
     }
