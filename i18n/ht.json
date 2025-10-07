@@ -1,0 +1,105 @@
+{
+    "moduleEntete": {
+        "logoAlt": "Lakay",
+        "inputSearchPlaceholder": "Chèche",
+
+        "navTeeshirts": "Tichòt",
+        "navCasquettes": "Kaskèt",
+        "navHoodies": "Sweat",
+        "navAide": "Ede",
+        "navNous": "Sou nou"
+    },
+    "modulePied": {
+        "titreFooter": "teeTIM",
+
+        "sectionAchats": [
+            "Acha ou yo",
+            "Kesyon yo poze souvan",
+            "Livrezon pakè ou",
+            "Kondisyon vant",
+            "Politik konfidansyalite"
+        ],
+        "sectionAPropos": [
+            "Sou teeTIM",
+            "Konpayi an",
+            "Ekip la",
+            "Travay"
+        ],
+        "sectionCoordonnees": [
+            "Kontakte nou",
+            "Gratis : ",
+            "Imèl : "
+        ],
+
+        "copyright": "&copy; Tout dwa rezève, teeTIM"
+    },
+
+    "pageAccueil": {
+        "metaTitre": "teeTIM // fib natirèl ... konsepsyon atifisyèl",
+        "metaDesc": "Paj dakèy pou konseptè rad 100% fèt an Kebèk, fèt pa etidyan TIM ak desen ki soti nan entèlijans atifisyèl, epi fabrike ak fib 100% natirèl ak biyolojik.",
+
+        "amorceH1": "Tichòt, sweat, ak kaskèt fèt an Kebèk 💯",
+        "amorceH2": "Konsepsyon TIM ak ❤️",
+        "amorceH4": "/** ak yon ti èd DALL-E 😉 **/",
+
+        "principalP1": "Jodi a, tichòt se yon rad enpòtan nan tout gadyenwob. E nan epòk kote kesyon anviwònman an enpòtan plis pase tout tan, nou pito tichòt ki fèt an Kebèk pou diminye enpak sou anviwònman epi mete valè sou atizana lokal.",
+        "principalP2": "Tichòt V, kol won, laj oswa ajiste, manch kout oswa manch long pou moun ki frèt, senp oswa ak desen pou mete stil... Tichòt la disponib nan plizyè koulè, stil ak desen."
+    },
+    "pageTeeshirts": {
+        "metaTitre": "teeTIM // Dekouvri koleksyon tichòt natirèl nou yo fèt an Kebèk",
+        "metaDesc": "Dekouvri koleksyon tichòt natirèl nou yo, fèt an Kebèk pa etidyan TIM, ki melanje kreyativite ak respè pou anviwònman.",
+
+        "titre": "Tichòt nou yo",
+        "enConstruction": "Ap vini..."
+    },
+    "pageCasquettes": {
+        "metaTitre": "teeTIM // Dekouvri koleksyon kaskèt natirèl nou yo fèt an Kebèk",
+        "metaDesc": "Eksplore seleksyon kaskèt natirèl nou yo, imajine ak fabrike an Kebèk pa etidyan TIM, ki melanje stil, konfò ak respè pou anviwònman.",
+
+        "titre": "Kaskèt nou yo",
+        "enConstruction": "Ap vini..."
+    },
+    "pageHoodies": {
+        "metaTitre": "teeTIM // Dekouvri koleksyon sweat natirèl nou yo fèt an Kebèk",
+        "metaDesc": "Dekouvri koleksyon sweat natirèl nou yo, fèt an Kebèk pa etidyan TIM, ki melanje konfò, stil ak respè pou anviwònman.",
+
+        "titre": "Sweat nou yo",
+        "enConstruction": "Ap vini..."
+    },
+    "pageAide": {
+        "metaTitre": "teeTIM // Nou toujou la pou ede w",
+        "metaDesc": "Bezwen èd? Ekip nou la pou ede w. Kontakte nou pou nenpòt kesyon oswa enkyetid sou pwodwi oswa sèvis nou yo.",
+
+        "titre": "Nou toujou la pou ede w",
+        "enConstruction": "Ap vini..."
+    },
+    "pageApropos": {
+        "metaTitre": "teeTIM // TeeTIM an rezime",
+        "metaDesc": "Dekouvri istwa ak misyon teeTIM, yon konpayi Kebèk ki dedye a kreye rad 100% natirèl ak ki respekte anviwònman.",
+
+        "titre": "TeeTIM an rezime",
+        "enConstruction": "Ap vini..."
+    },
+    "pageConnexion": {
+        "metaTitre": "teeTIM // Konekte ak kont ou",
+        "metaDesc": "Konekte ak kont teeTIM ou pou jwenn enfòmasyon pèsonèl ou, swiv kòmann ou yo epi jwi yon eksperyans acha pèsonalize.",
+
+        "titre": "Koneksyon",
+        "formCommon": {
+            "labelEmail": "Adrès imèl:",
+            "labelPassword": "Modpas:",
+            "placeholderEmail": "Antre adrès imèl ou",
+            "placeholderPassword": "Antre modpas ou"
+        },
+        "formLogin": {
+            "legende": "Konekte"
+        },
+        "formRegister": {
+            "legende": "Kreye yon kont",
+            "labelConfirmPassword": "Konfime modpas la:",
+            "labelName": "Non:",
+            "placeholderConfirmPassword": "Konfime modpas ou",
+            "placeholderName": "Antre non itilizatè ou"
+        }
+    }
+}

@@ -1,0 +1,3 @@
+
+# ignore les donnees sensibles
+data/accounts.json

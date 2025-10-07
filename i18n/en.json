@@ -58,5 +58,48 @@
 
         "titre": "Our caps",
         "enConstruction": "Coming soon..."
+    },
+    "pageHoodies": {
+        "metaTitre": "teeTIM // Discover our collection of 100% natural hoodies designed in Quebec",
+        "metaDesc": "Discover our collection of 100% natural hoodies, designed in Quebec by TIM students, combining comfort, style, and environmental respect.",
+
+        "titre": "Our hoodies",
+        "enConstruction": "Coming soon..."
+    },
+    "pageAide": {
+        "metaTitre": "teeTIM // We are always here to help",
+        "metaDesc": "Need help? Our team is here to assist you. Contact us for any questions or concerns about our products or services.",
+
+        "titre": "We are always here to help",
+        "enConstruction": "Coming soon..."
+    },
+    "pageApropos": {
+        "metaTitre": "teeTIM // About teeTIM",
+        "metaDesc": "Discover the story and mission of teeTIM, a Quebec company dedicated to creating 100% natural and environmentally friendly clothing.",
+
+        "titre": "About teeTIM",
+        "enConstruction": "Coming soon..."
+    },
+    "pageConnexion": {
+        "metaTitre": "teeTIM // Sign in to your account",
+        "metaDesc": "Sign in to your teeTIM account to access your personal information, track your orders, and enjoy a personalized shopping experience.",
+
+        "titre": "Sign in",
+        "formCommon":{
+            "labelEmail": "Email address:",
+            "labelPassword": "Password:",
+            "placeholderEmail": "Enter your email address",
+            "placeholderPassword": "Enter your password"
+        },
+        "formLogin": {
+            "legende": "Sign in"
+        },
+        "formRegister": {
+            "legende": "Create an account",
+            "labelConfirmPassword": "Confirm password:",
+            "labelName": "Name:",
+            "placeholderConfirmPassword": "Confirm your password",
+            "placeholderName": "Enter your username"
+        }
     }
 }

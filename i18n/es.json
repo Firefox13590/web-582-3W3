@@ -58,5 +58,48 @@
 
         "titre": "Nuestras gorras",
         "enConstruction": "Próximamente..."
+    },
+    "pageHoodies": {
+        "metaTitre": "teeTIM // Descubre nuestra colección de sudaderas 100% naturales diseñadas en Quebec",
+        "metaDesc": "Descubre nuestra colección de sudaderas 100% naturales, diseñadas en Quebec por estudiantes de TIM, combinando comodidad, estilo y respeto por el medio ambiente.",
+
+        "titre": "Nuestras sudaderas",
+        "enConstruction": "Próximamente..."
+    },
+    "pageAide": {
+        "metaTitre": "teeTIM // Siempre estamos para ayudarte",
+        "metaDesc": "¿Necesitas ayuda? Nuestro equipo está aquí para asistirte. Contáctanos para cualquier pregunta o inquietud sobre nuestros productos o servicios.",
+
+        "titre": "Siempre estamos para ayudarte",
+        "enConstruction": "Próximamente..."
+    },
+    "pageApropos": {
+        "metaTitre": "teeTIM // teeTIM en breve",
+        "metaDesc": "Descubre la historia y la misión de teeTIM, una empresa quebequense dedicada a la creación de ropa 100% natural y respetuosa con el medio ambiente.",
+
+        "titre": "teeTIM en breve",
+        "enConstruction": "Próximamente..."
+    },
+    "pageConnexion": {
+        "metaTitre": "teeTIM // Iniciar sesión en tu cuenta",
+        "metaDesc": "Inicia sesión en tu cuenta de teeTIM para acceder a tu información personal, seguir tus pedidos y disfrutar de una experiencia de compra personalizada.",
+
+        "titre": "Iniciar sesión",
+        "formCommon":{
+            "labelEmail": "Correo electrónico:",
+            "labelPassword": "Contraseña:",
+            "placeholderEmail": "Introduce tu correo electrónico",
+            "placeholderPassword": "Introduce tu contraseña"
+        },
+        "formLogin": {
+            "legende": "Iniciar sesión"
+        },
+        "formRegister": {
+            "legende": "Crear una cuenta",
+            "labelConfirmPassword": "Confirmar contraseña:",
+            "labelName": "Nombre:",
+            "placeholderConfirmPassword": "Confirma tu contraseña",
+            "placeholderName": "Introduce tu nombre de usuario"
+        }
     }
 }

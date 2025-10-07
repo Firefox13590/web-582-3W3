@@ -58,5 +58,48 @@
 
         "titre": "Nos casquettes",
         "enConstruction": "À venir..."
+    },
+    "pageHoodies": {
+        "metaTitre": "teeTIM // Découvrez notre collection de hoodies 100% naturels et conçus au Québec",
+        "metaDesc": "Découvrez notre collection de hoodies 100% naturels, conçus au Québec par les étudiants du TIM, alliant confort, style et respect de l'environnement.",
+
+        "titre": "Nos hoodies",
+        "enConstruction": "À venir..."
+    },
+    "pageAide": {
+        "metaTitre": "teeTIM // Nous sommes toujours à l'écoute",
+        "metaDesc": "Besoin d'aide ? Notre équipe est là pour vous assister. Contactez-nous pour toute question ou préoccupation concernant nos produits ou services.",
+
+        "titre": "Nous sommes toujours à l'écoute",
+        "enConstruction": "À venir..."
+    },
+    "pageApropos": {
+        "metaTitre": "teeTIM // TeeTIM en bref",
+        "metaDesc": "Découvrez l'histoire et la mission de teeTIM, une entreprise québécoise dédiée à la création de vêtements 100% naturels et respectueux de l'environnement.",
+
+        "titre": "TeeTIM en bref",
+        "enConstruction": "À venir..."
+    },
+    "pageConnexion": {
+        "metaTitre": "teeTIM // Connexion à votre compte",
+        "metaDesc": "Connectez-vous à votre compte teeTIM pour accéder à vos informations personnelles, suivre vos commandes et profiter d'une expérience d'achat personnalisée.",
+
+        "titre": "Connexion",
+        "formCommon": {
+            "labelEmail": "Adresse courriel:",
+            "labelPassword": "Mot de passe:",
+            "placeholderEmail": "Entrez votre adresse courriel",
+            "placeholderPassword": "Entrez votre mot de passe"
+        },
+        "formLogin": {
+            "legende": "Se connecter"
+        },
+        "formRegister": {
+            "legende": "Créer un compte",
+            "labelConfirmPassword": "Confirmer le mot de passe:",
+            "labelName": "Nom:",
+            "placeholderConfirmPassword": "Confirmez votre mot de passe",
+            "placeholderName": "Entrez votre nom d'utilisateur"
+        }
     }
 }

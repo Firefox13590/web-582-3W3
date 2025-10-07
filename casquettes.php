@@ -7,7 +7,7 @@ $page = "casquettes";
 include("modules/entete.mod.php"); 
 ?>
 
-<main class="page-casquettes">
+<main class="page-produits page-casquettes">
     <article class="amorce">
         <h1><?= $obj_page->titre; ?></h1>
     </article>
