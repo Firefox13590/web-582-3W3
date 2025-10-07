@@ -44,5 +44,23 @@
         "metaDesc": "Découvrez nos casquettes fabriquées localement au Québec, alliant savoir-faire artisanal, qualité supérieure et engagement envers le commerce local.",
         "titre": "Nos casquettes",
         "enConstruction": "À venir..."
+    },
+    "hoodies": {
+        "metaTitre": "teeTIM // Découvrez nos hoodies 100% naturelles et conçues au Québec",
+        "metaDesc": "Découvrez nos hoodies fabriqués localement au Québec, alliant savoir-faire artisanal, qualité supérieure et engagement envers le commerce local.",
+        "titre": "Nos hoodies",
+        "enConstruction": "À venir..."
+    },
+    "aide": {
+        "metaTitre": "teeTIM // Aide et FAQ",
+        "metaDesc": "Besoin d'aide ? Consultez notre section FAQ pour trouver des réponses à vos questions sur les commandes, la livraison et plus encore.",
+        "titre": "Aide et FAQ",
+        "enConstruction": "À venir..."
+    },
+    "apropos": {
+        "metaTitre": "teeTIM // À propos de nous",
+        "metaDesc": "Découvrez l'histoire de teeTIM, notre mission et les valeurs qui nous guident dans la création de vêtements durables et éthiques.",
+        "titre": "À propos de teeTIM",
+        "enConstruction": "À venir..."
     }
 }

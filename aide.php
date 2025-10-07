@@ -1,10 +1,10 @@
 <?php
-$page = "casquettes";
+$page = "aide";
 
 // Inclure le contenu du fichier entete.inc.php ICI
 include("commun/entete.inc.php");
 ?>
-<main class="page-produits page-casquettes">
+<main class="page-produits page-aide">
     <article class="amorce">
         <h1><?= $_->titre; ?></h1>
     </article>

@@ -8,7 +8,6 @@
         "menuAide": "Help",
         "menuNous": "About us"
     },
-    
     "pied2page": {
         "aproposTitre": "About teeTIM",
         "aproposCompagnie": "The company",
@@ -30,8 +29,8 @@
         "amorceH1": "T-shirts, hoodies, and caps made in Quebec 💯",
         "amorceH2": "Designed at TIM with ❤️",
         "amorceH4": "/** with a little help from DALL-E 😉 **/",
-        "para1": "Today, the t-shirt is an essential garment in everyone's wardrobe. And in an era where environmental concerns are more important than ever, we prefer t-shirts made in Quebec to reduce environmental impact and promote local craftsmanship.",
-        "para2": "V-neck t-shirts, crew neck, loose or fitted, short sleeves or long sleeves for those who feel the cold, plain or patterned to style an outfit… The t-shirt is available in a variety of colors, styles, and patterns."
+        "para1": "Today, the t-shirt is an essential garment in everyone's wardrobe. And in an era where environmental concerns are more important than ever, we prefer t-shirts made in Quebec to reduce environmental impact and highlight local craftsmanship.",
+        "para2": "V-neck t-shirt, crew neck, loose or fitted, short sleeves or long sleeves for the cold-sensitive, plain or patterned to style an outfit… The t-shirt is available in a variety of colors, styles, and patterns."
     },
     "teeshirts": {
         "metaTitre": "teeTIM // Discover our 100% natural t-shirts designed in Quebec",
@@ -43,6 +42,24 @@
         "metaTitre": "teeTIM // Discover our 100% natural caps designed in Quebec",
         "metaDesc": "Discover our caps made locally in Quebec, combining artisanal know-how, superior quality, and commitment to local business.",
         "titre": "Our caps",
+        "enConstruction": "Coming soon..."
+    },
+    "hoodies": {
+        "enConstruction": "Coming soon...",
+        "metaTitre": "teeTIM // Discover our 100% natural hoodies designed in Quebec",
+        "metaDesc": "Discover our hoodies made locally in Quebec, combining artisanal know-how, superior quality, and commitment to local business.",
+        "titre": "Our hoodies"
+    },
+    "aide": {
+        "enConstruction": "Coming soon...",
+        "metaTitre": "teeTIM // Help and FAQ",
+        "metaDesc": "Need help? Check out our FAQ section for answers to your questions about orders, delivery, and more.",
+        "titre": "Help and FAQ"
+    },
+    "apropos": {
+        "metaTitre": "About teeTIM",
+        "metaDesc": "Learn about teeTIM: a student initiative creating sustainable clothing in Quebec using natural fibers and AI-assisted designs.",
+        "titre": "About teeTIM",
         "enConstruction": "Coming soon..."
     }
 }
