@@ -2,14 +2,18 @@
 	"animaux": {
 		"nomTheme": {
 			"fr": "Animaux",
-			"en": "Animals"
+			"en": "Animals",
+            "es": "Animales",
+            "ht": "Bèt"
 		},
 		"produits": [
 			{
 				"id": "ts0001",
 				"nom": {
 					"fr": "Cute comme un poisson tropical",
-					"en": "Cute as a Tropical Fish"
+					"en": "Cute as a Tropical Fish",
+                    "es": "Lindo como un pez tropical",
+                    "ht": "Bèl tankou yon pwason twopikal"
 				},
 				"dac": "2020-04-25",
 				"ventes": 34,
@@ -19,7 +23,9 @@
 				"id": "ts0004",
 				"nom": {
 					"fr": "Monstre douillet",
-					"en": "Fluffy Monster"
+					"en": "Fluffy Monster",
+                    "es": "Monstruo esponjoso",
+                    "ht": "Monstè douillet"
 				},
 				"dac": "2023-08-12",
 				"ventes": 123,
@@ -29,7 +35,9 @@
 				"id": "ts0006",
 				"nom": {
 					"fr": "Camarade basque",
-					"en": "Basque Buddy"
+					"en": "Basque Buddy",
+                    "es": "Compañero vasco",
+                    "ht": "Kamarad basque"
 				},
 				"dac": "2023-02-27",
 				"ventes": 20,
@@ -39,7 +47,9 @@
 				"id": "ts0007",
 				"nom": {
 					"fr": "Chaton moteur",
-					"en": "Engine Kitten"
+					"en": "Engine Kitten",
+                    "es": "Gatito motor",
+                    "ht": "Chaton moteur"
 				},
 				"dac": "2024-10-01",
 				"ventes": 12,
@@ -50,14 +60,18 @@
 	"inusite": {
 		"nomTheme": {
 			"fr": "Inusité",
-			"en": "Unusual"
+			"en": "Unusual",
+            "es": "Inusual",
+            "ht": "Inik"
 		},
 		"produits": [
 			{
 				"id": "ts0002",
 				"nom": {
 					"fr": "Fauteuil illégal",
-					"en": "Armchair Avocado"
+					"en": "Armchair Avocado",
+                    "es": "Sillón ilegal",
+                    "ht": "Fauteuil illégal"
 				},
 				"dac": "2024-06-20",
 				"ventes": 6,
@@ -68,14 +82,18 @@
 	"sport": {
 		"nomTheme": {
 			"fr": "Sport",
-			"en": "Sport"
+			"en": "Sport",
+            "es": "Deporte",
+            "ht": "Espò"
 		},
 		"produits": [
 			{
 				"id": "ts0003",
 				"nom": {
 					"fr": "Un dunk dans l'univers",
-					"en": "A Dunk in the Universe"
+					"en": "A Dunk in the Universe",
+                    "es": "Una clavada en el universo",
+                    "ht": "Yon dunk nan linivè"
 				},
 				"dac": "2024-01-02",
 				"ventes": 21,
@@ -86,14 +104,18 @@
 	"nature": {
 		"nomTheme": {
 			"fr": "Nature",
-			"en": "Nature"
+			"en": "Nature",
+            "es": "Naturaleza",
+            "ht": "Nati"
 		},
 		"produits": [
 			{
 				"id": "ts0005",
 				"nom": {
 					"fr": "Bleu comme une orange",
-					"en": "Blue as an Orange"
+					"en": "Blue as an Orange",
+                    "es": "Azul como una naranja",
+                    "ht": "Bleu comme une orange"
 				},
 				"dac": "2023-12-25",
 				"ventes": 325,
@@ -103,7 +125,9 @@
 				"id": "ts0008",
 				"nom": {
 					"fr": "Et vogue le navire",
-					"en": "And the Ship Sails"
+					"en": "And the Ship Sails",
+                    "es": "Y navega el barco",
+                    "ht": "Epi bato a vwayaje"
 				},
 				"dac": "2020-12-21",
 				"ventes": 293,
@@ -114,7 +138,9 @@
 	"jeux": {
 		"nomTheme": {
 			"fr": "Jeux vidéo",
-			"en": "Video Games"
+			"en": "Video Games",
+            "es": "Videojuegos",
+            "ht": "Jwèt videyo"
 		},
 		"produits": []
 	}

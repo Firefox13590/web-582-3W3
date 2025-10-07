@@ -4,7 +4,23 @@ $page = "teeshirts";
 
 // inclure contenu de l'entete ici
 // ressemble a un copier/coller
-include("modules/entete.mod.php"); 
+include("modules/entete.mod.php");
+
+// recupere donnees teeshirts
+$dataTeeshirts = json_decode(file_get_contents('data/teeshirts.json'));
+// var_dump($dataTeeshirts);
+
+// extraire themes et produits catalogue
+$themes = [];
+$produits = [];
+
+// affichage dynamique chaque produit t-shirts
+foreach($dataTeeshirts as $theme => $detailsTheme){
+	$themes[$theme] = $detailsTheme->nomTheme->$langue;
+	$produits = array_merge($produits, $detailsTheme->produits);
+	// var_dump($detailsTheme->produits);
+}
+// var_dump($themes);
 ?>
 
 <main class="page-produits page-teeshirts">
@@ -17,11 +33,16 @@ include("modules/entete.mod.php");
 			<label for="filtre">Filtrer par thème : </label>
 			<select name="filtre" id="filtre">
 				<option value="tous">Tous les produits</option>
-				<option value="animaux">Animaux</option>
+				
+				<?php foreach($themes as $themeKey => $themeValue): ?>
+				<option value="<?= $themeKey; ?>"><?= $themeValue; ?></option>
+				<?php endforeach; ?>
+
+				<!-- <option value="animaux">Animaux</option>
 				<option value="nature">Nature</option>
 				<option value="jeux">Jeux vidéo</option>
 				<option value="inusite">Inusité</option>
-				<option value="sport">Sport</option>
+				<option value="sport">Sport</option> -->
 			</select>
 		</div>
 		<div class="tri">
@@ -39,23 +60,14 @@ include("modules/entete.mod.php");
 	
     <article class="principal">
 		<?php
-			// recupere donnees teeshirts
-			$dataTeeshirts = json_decode(file_get_contents('data/teeshirts.json'));
-			// var_dump($dataTeeshirts);
-
-			// extraire themes et produits catalogue
-			$themes = [];
-			$produits = [];
-			
-			// affichage dynamique chaque produit t-shirts
 			foreach($produits as $item):
 		?>
-		<div class="produit" data-item-id="<?= $data->id; ?>">
+		<div class="produit" data-item-id="<?= $item->id; ?>">
 			<span class="image">
-				<img src="images/produits/teeshirts/<?= $data->id; ?>.webp" alt="<?= $data->nom; ?>">
+				<img src="images/produits/teeshirts/<?= $item->id; ?>.webp" alt="<?= $item->nom->$langue; ?>">
 			</span>
-			<span class="nom"><?= $data->nom; ?></span>
-			<span class="prix"><?= $data->prix; ?> $</span>
+			<span class="nom"><?= $item->nom->$langue; ?></span>
+			<span class="prix"><?= $item->prix; ?> $</span>
 		</div>
 		<?php endforeach; ?>
 	</article>
