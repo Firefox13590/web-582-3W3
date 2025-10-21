@@ -10,7 +10,7 @@ $langue = determinerCodeLangue($languesDisponibles);
 
 // Obtenir les textes et les mettres dans les raccourcis utilisés dans le site.
 // On utilise l'affectation par "épandage" ou destructuration ;-) (destructuring assignment)
-[$_ent, $_pp, $_] = recupererTextesStatiques($langue, $page);
+[$_ent, $_pp, $_, $_cat] = recupererTextesStatiques($langue, $page);
 
 ?>
 <!DOCTYPE html>

@@ -58,5 +58,10 @@ function determinerCodeLangue($codesLangues)
 function recupererTextesStatiques($codeLangue, $page) {
     $textesChaineJson =  file_get_contents("i18n/" . $codeLangue . ".json");
     $textes = json_decode($textesChaineJson);
-    return [$textes->entete, $textes->pied2page, $textes->$page];
+    return [
+        $textes->entete, 
+        $textes->pied2page, 
+        $textes->$page, 
+        $textes->catalogue
+    ];
 }
