@@ -26,6 +26,7 @@ $langue = determinerCodeLangue($languesDisponibles);
     <title><?= $_->metaTitre; ?></title>
     <meta name="description" content="<?= $_->metaDesc; ?>">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
     <link rel="icon" type="image/png" href="images/favicon.png" />
 </head>
 
@@ -34,13 +35,6 @@ $langue = determinerCodeLangue($languesDisponibles);
         <header>
             <nav class="barre-haut">
                 <!-- Générer les boutons de choix de langue dynamiquement en PHP -->
-
-                <?php
-                // Méthode 1 : moins désirable
-                // foreach ($languesDisponibles as $codeLangue) {
-                //     echo "<a href='?lan=$codeLangue'>$codeLangue</a>";
-                // }
-                ?>
                 <?php foreach ($languesDisponibles as $codeLangue) :  ?>
                     <a
                         <?= $langue == $codeLangue ? 'class="actif"' : '' ?>

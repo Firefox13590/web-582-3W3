@@ -17,7 +17,32 @@ foreach ($catalogue as $codeTheme => $detailTheme) {
 	$produits = array_merge($produits, $detailTheme->produits);
 }
 
-// print_r($themes);
+// print_r($produits);
+
+// Gestion du tri
+if(isset($_GET["tri"]) && $_GET["tri"] != "aleatoire") {
+	$tri = $_GET["tri"];
+	// Trier le tableau $produits selon le critère indiqué dans la variable $tri
+	if($tri=="ventesDesc") {
+		usort($produits, function($elt1, $elt2) {
+			return $elt2->ventes - $elt1->ventes;
+		});
+	}
+	else if($tri=="prixAsc") {
+		usort($produits, function($elt1, $elt2) {
+			return $elt1->prix - $elt2->prix;
+		});
+	}
+	else if($tri=="prixDesc") {
+		usort($produits, function($elt1, $elt2) {
+			return $elt2->prix - $elt1->prix;
+		});
+	}
+}
+else {
+	$tri = "aleatoire";
+	shuffle($produits);
+}
 
 ?>
 <main class="page-produits page-teeshirts">
@@ -37,13 +62,13 @@ foreach ($catalogue as $codeTheme => $detailTheme) {
 			<div class="tri">
 				<label for="tri"><?= $_cat->etiquetteTri; ?></label>
 				<select name="tri" id="tri">
-					<option value="aleatoire"><?= $_cat->triAleatoire; ?></option>
-					<option value="ventesDesc"><?= $_cat->triMeilleurVendeur; ?></option>
-					<option value="prixAsc"><?= $_cat->triPrixAsc; ?></option>
-					<option value="prixDesc"><?= $_cat->triPrixDesc; ?></option>
-					<option value="nomAsc"><?= $_cat->triNomAsc; ?></option>
-					<option value="nomDesc"><?= $_cat->triNomDesc; ?></option>
-					<option value="dacDesc"><?= $_cat->triNouveaute; ?></option>
+					<option <?= ($tri=="aleatoire") ? "selected" : ""; ?> value="aleatoire"><?= $_cat->triAleatoire; ?></option>
+					<option <?= ($tri=="ventesDesc") ? "selected" : ""; ?> value="ventesDesc"><?= $_cat->triMeilleurVendeur; ?></option>
+					<option <?= ($tri=="prixAsc") ? "selected" : ""; ?> value="prixAsc"><?= $_cat->triPrixAsc; ?></option>
+					<option <?= ($tri=="prixDesc") ? "selected" : ""; ?> value="prixDesc"><?= $_cat->triPrixDesc; ?></option>
+					<option <?= ($tri=="nomAsc") ? "selected" : ""; ?> value="nomAsc"><?= $_cat->triNomAsc; ?></option>
+					<option <?= ($tri=="nomDesc") ? "selected" : ""; ?> value="nomDesc"><?= $_cat->triNomDesc; ?></option>
+					<option <?= ($tri=="dacDesc") ? "selected" : ""; ?> value="dacDesc"><?= $_cat->triNouveaute; ?></option>
 				</select>
 			</div>
 		</form>
@@ -57,16 +82,11 @@ foreach ($catalogue as $codeTheme => $detailTheme) {
 				</span>
 				<span class="nom"><?= $prd->nom->$langue; ?></span>
 				<span class="prix"><?= number_format($prd->prix, 2, ',', ' '); ?> $</span>
+				<span class="ventes"><?= $prd->ventes; ?></span>
 			</div>
 		<?php endforeach; ?>
 	</article>
 </main>
-
-<script>
-	document.querySelector("#tri").addEventListener("change", 
-										evt => evt.target.form.submit());
-</script>
-
 <?php
 // Inclure la partie commune en bas de page.
 include("commun/pied2page.inc.php");
