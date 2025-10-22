@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Librairie des fonctions associées au module d'internationnalisation (i18n)
  */
@@ -55,13 +56,21 @@ function determinerCodeLangue($codesLangues)
  * 
  * @return array Tableau contenant 3 objets (entête, pied de page, page spécifique).
  */
-function recupererTextesStatiques($codeLangue, $page) {
+function recupererTextesStatiques($codeLangue, $page)
+{
     $textesChaineJson =  file_get_contents("i18n/" . $codeLangue . ".json");
     $textes = json_decode($textesChaineJson);
     return [
-        $textes->entete, 
-        $textes->pied2page, 
-        $textes->$page, 
+        $textes->entete,
+        $textes->pied2page,
+        $textes->$page,
         $textes->catalogue
     ];
 }
+
+// Méthode 1 (plus complète, mais remplacée par une façon plus rapide en une ligne)
+/*
+function obtenirFormatteurNombre($locale) {
+    return new NumberFormatter($locale, NumberFormatter::CURRENCY);
+}
+*/

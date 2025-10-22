@@ -25,6 +25,9 @@ foreach ($catalogue as $codeTheme => $detailTheme) {
 $tri = obtenirCritereTri();
 $produits = trierProduits($produits, $tri);
 
+// Méthode 1 (pas utilisée)
+// Instancier un objet formatteur pour cette page
+// $frmt = obtenirFormatteurNombre($langue);
 ?>
 <main class="page-produits page-teeshirts">
 	<article class="amorce">
@@ -62,7 +65,10 @@ $produits = trierProduits($produits, $tri);
 					<img src="images/produits/teeshirts/<?= $prd->id; ?>.webp" alt="<?= $prd->nom->$langue; ?>">
 				</span>
 				<span class="nom"><?= $prd->nom->$langue; ?></span>
-				<span class="prix"><?= number_format($prd->prix, 2, ',', ' '); ?> $</span>
+				<!-- Méthode 1 : pas utilisée -->
+				<!-- <span class="prix"><?= ""; //$frmt->formatCurrency($prd->prix, "GBP"); ?></span> -->
+				<!-- Méthode 2 : préférée pour formatter rapidement -->
+				<span class="prix"><?= MessageFormatter::formatMessage($langue, "{0, number, :: currency/CAD}", [$prd->prix]) ?></span>
 				<span class="ventes"><?= $prd->ventes; ?></span>
 			</div>
 		<?php endforeach; ?>
