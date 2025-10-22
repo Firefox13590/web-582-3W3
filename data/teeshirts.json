@@ -94,7 +94,7 @@
 			{
 				"id": "ts0005",
 				"nom": {
-					"fr": "Bleu comme une orange",
+					"fr": "bleu comme une orange",
 					"en": "Blue as an Orange"
 				},
 				"dac": "2023-12-25",
@@ -104,8 +104,8 @@
 			{
 				"id": "ts0008",
 				"nom": {
-					"fr": "Et vogue le navire",
-					"en": "And the Ship Sails"
+					"fr": "Ét vogue le navire",
+					"en": "and the Ship Sails"
 				},
 				"dac": "2020-12-21",
 				"ventes": 293,

@@ -4,6 +4,9 @@ $page = "teeshirts";
 
 // Inclure le contenu du fichier entete.inc.php ICI
 include("commun/entete.inc.php");
+// Inclure la librairie de gestion du catalogue
+include("lib/catalogue.lib.php");
+
 // Intégrer le fichier JSON contenant les produits
 $catalogue = json_decode(file_get_contents("data/teeshirts.json"));
 //print_r($catalogue);
@@ -17,32 +20,10 @@ foreach ($catalogue as $codeTheme => $detailTheme) {
 	$produits = array_merge($produits, $detailTheme->produits);
 }
 
-// print_r($produits);
 
 // Gestion du tri
-if(isset($_GET["tri"]) && $_GET["tri"] != "aleatoire") {
-	$tri = $_GET["tri"];
-	// Trier le tableau $produits selon le critère indiqué dans la variable $tri
-	if($tri=="ventesDesc") {
-		usort($produits, function($elt1, $elt2) {
-			return $elt2->ventes - $elt1->ventes;
-		});
-	}
-	else if($tri=="prixAsc") {
-		usort($produits, function($elt1, $elt2) {
-			return $elt1->prix - $elt2->prix;
-		});
-	}
-	else if($tri=="prixDesc") {
-		usort($produits, function($elt1, $elt2) {
-			return $elt2->prix - $elt1->prix;
-		});
-	}
-}
-else {
-	$tri = "aleatoire";
-	shuffle($produits);
-}
+$tri = obtenirCritereTri();
+$produits = trierProduits($produits, $tri);
 
 ?>
 <main class="page-produits page-teeshirts">
