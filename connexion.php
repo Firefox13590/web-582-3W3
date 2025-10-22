@@ -1,7 +1,7 @@
 <?php 
     // Indiquer la page
     $page = "connexion";
-    include("modules/entete.mod.php"); 
+    include("modules/entete.mod.php");
 ?>
     <main class="page-connexion">
         <article class="amorce">

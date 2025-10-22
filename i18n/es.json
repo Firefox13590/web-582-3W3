@@ -45,6 +45,18 @@
         "principalP1": "Hoy en día, la camiseta es una prenda esencial en el armario de todos. Y en una época donde los temas medioambientales importan más que nunca, preferimos camisetas hechas en Quebec para reducir el impacto ambiental y destacar la artesanía local.",
         "principalP2": "Camiseta de cuello en V, cuello redondo, holgada o ajustada, de manga corta o larga para quienes sienten frío fácilmente, lisa o estampada para combinar con tu atuendo… La camiseta está disponible en una variedad de colores, estilos y patrones."
     },
+
+    "catalogue": {
+        "etiquetteTri": "Ordenar por: ",
+        "triAleatoire": "Aleatorio",
+        "triMeilleurVendeur": "Más vendido",
+        "triPrixAscendant": "Precio / ascendente",
+        "triPrixDescendant": "Precio / descendente",
+        "triNomAscendant": "Alfa / ascendente",
+        "triNomDescendant": "Alfa / descendente",
+        "triNouveaute": "Novedad"
+    },
+
     "pageTeeshirts": {
         "metaTitre": "teeTIM // Descubre nuestra colección de camisetas 100% naturales diseñadas en Quebec",
         "metaDesc": "Descubre nuestra colección de camisetas 100% naturales, diseñadas en Quebec por estudiantes de TIM, combinando creatividad y respeto por el medio ambiente.",

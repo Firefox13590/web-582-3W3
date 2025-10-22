@@ -45,6 +45,18 @@
         "principalP1": "Today, the T-shirt is an essential piece of clothing in everyone’s wardrobe. And in an era where environmental issues matter more than ever, we prefer T-shirts made in Quebec to reduce environmental impact and highlight local craftsmanship.",
         "principalP2": "V-neck T-shirt, crew neck, loose or fitted, short-sleeved or long-sleeved for those who get cold easily, plain or patterned to style an outfit… The T-shirt is available in a variety of colors, styles, and patterns."
     },
+
+    "catalogue": {
+        "etiquetteTri": "Sort by: ",
+        "triAleatoire": "Random",
+        "triMeilleurVendeur": "Best seller",
+        "triPrixAscendant": "Price / ascending",
+        "triPrixDescendant": "Price / descending",
+        "triNomAscendant": "Alpha / ascending",
+        "triNomDescendant": "Alpha / descending",
+        "triNouveaute": "New arrival"
+    },
+
     "pageTeeshirts": {
         "metaTitre": "teeTIM // Discover our collection of 100% natural T-shirts designed in Quebec",
         "metaDesc": "Discover our collection of 100% natural T-shirts, designed in Quebec by TIM students, combining creativity and environmental respect.",

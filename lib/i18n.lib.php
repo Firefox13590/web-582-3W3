@@ -64,7 +64,7 @@ function determinerCodeLangue($languesDisponibles)
  * @param string $codeLangue Code (2 lettres) de la langue
  * @param string $indicePage Etiquette associe avec la page affichee
  * 
- * @return array Tableau avec 3 objets (entete, pied, page specifique)
+ * @return array Tableau avec 4 objets (entete, pied, page specifique, catalogue)
  */
 function obtenirTextesStatiques($codeLangue, $indicePage)
 {
@@ -75,5 +75,12 @@ function obtenirTextesStatiques($codeLangue, $indicePage)
     // formattage indice page pour acceder a la propriete dynamique
     $propertyPageName = "page" . ucfirst($indicePage);
 
-    return [$obj->moduleEntete, $obj->modulePied, $obj->$propertyPageName];
+    return [$obj->moduleEntete, $obj->modulePied, $obj->$propertyPageName, $obj->catalogue];
 }
+
+// methode 1 formattage nombre
+// remplacee par deuxieme methode en 1 ligne
+// function obtenirFormatteurNombre($locale){
+//     return new NumberFormatter($locale, NumberFormatter::CURRENCY);
+// }
+

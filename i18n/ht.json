@@ -45,6 +45,18 @@
         "principalP1": "Jodi a, tichòt se yon rad enpòtan nan tout gadyenwob. E nan epòk kote kesyon anviwònman an enpòtan plis pase tout tan, nou pito tichòt ki fèt an Kebèk pou diminye enpak sou anviwònman epi mete valè sou atizana lokal.",
         "principalP2": "Tichòt V, kol won, laj oswa ajiste, manch kout oswa manch long pou moun ki frèt, senp oswa ak desen pou mete stil... Tichòt la disponib nan plizyè koulè, stil ak desen."
     },
+
+    "catalogue": {
+        "etiquetteTri": "Triye pa : ",
+        "triAleatoire": "O aza",
+        "triMeilleurVendeur": "Pi bon vandè",
+        "triPrixAscendant": "Pri / montan",
+        "triPrixDescendant": "Pri / desandan",
+        "triNomAscendant": "Alfa / montan",
+        "triNomDescendant": "Alfa / desandan",
+        "triNouveaute": "Nouvote"
+    },
+
     "pageTeeshirts": {
         "metaTitre": "teeTIM // Dekouvri koleksyon tichòt natirèl nou yo fèt an Kebèk",
         "metaDesc": "Dekouvri koleksyon tichòt natirèl nou yo, fèt an Kebèk pa etidyan TIM, ki melanje kreyativite ak respè pou anviwònman.",

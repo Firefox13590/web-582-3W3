@@ -11,12 +11,13 @@ $langue = determinerCodeLangue($languesDisponibles);
 // print_r($langue);
 
 // recupere textes statiques et les affecte a des raccourcis via array destructuring
-[$obj_ent, $obj_pied, $obj_page] = obtenirTextesStatiques($langue, $page);
+[$obj_ent, $obj_pied, $obj_page, $obj_cat] = obtenirTextesStatiques($langue, $page);
+
 
 /*********************
  Gestion de la connexion
 *********************/
-include('lib/loginHandler.php');
+include('lib/connexion.lib.php');
 
 if(isset($_COOKIE['isConnected'])){
     $isConnected = (bool) $_COOKIE['isConnected'];
@@ -54,34 +55,36 @@ if(isset($_COOKIE['isConnected'])){
 					</a>
 				</div>
 
-                <!-- <a href="?lan=fr">fr</a>
-                <a href="?lan=en">en</a>
-                <a href="?lan=es">es</a> -->
-                <!-- generer btns choix langue dynamiquement -->
-                <!-- <?php
-                // dossier i18n
-                $i18nFolder = scandir("i18n");
-                // print_r($i18nFolder);
+                <div>
+                    <!-- <a href="?lan=fr">fr</a>
+                    <a href="?lan=en">en</a>
+                    <a href="?lan=es">es</a> -->
+                    <!-- generer btns choix langue dynamiquement -->
+                    <?php
+                    // dossier i18n
+                    $i18nFolder = scandir("i18n");
+                    // print_r($i18nFolder);
 
-                // methode 1 de faire html avec php
-                // prof dit que c caca, mais perso je prefere
-                for ($i = 2; $i < count($i18nFolder); $i++) {
-                    // echo "Ma balz itched $i times";
-                    $langueActive = "";
-                    $langueFichier = basename($i18nFolder[$i], '.json');
-                    // echo $langueFichier;
-                    if ($langue === $langueFichier) $langueActive = 'class="actif"';
-                    // echo $langueActive;
-                    $nomLocale = locale_get_display_name($langueFichier, $langueFichier);
-                    // echo $nomLocale;
-                    echo "<a href='?lan=$langueFichier' title='$nomLocale' $langueActive>$langueFichier</a> ";
-                }
-                ?> -->
+                    // methode 1 de faire html avec php
+                    // prof dit que c caca, mais perso je prefere
+                    for ($i = 2; $i < count($i18nFolder); $i++) {
+                        // echo "Ma balz itched $i times";
+                        $langueActive = "";
+                        $langueFichier = basename($i18nFolder[$i], '.json');
+                        // echo $langueFichier;
+                        if ($langue === $langueFichier) $langueActive = 'class="actif"';
+                        // echo $langueActive;
+                        $nomLocale = locale_get_display_name($langueFichier, $langueFichier);
+                        // echo $nomLocale;
+                        echo "<a href='?lan=$langueFichier' title='$nomLocale' $langueActive>$langueFichier</a> ";
+                    }
+                    ?>
+                </div>
 
                 <!-- methode 2 de faire html avec php -->
                 <!-- prof dit que c mieux pask ca empeche de faire du phtml fucked up, mais perso je trouve ca caca -->
                 <!-- quanf utilise blocs php decolles comme ca, on peut remplacer acollades ["{", "}"] par [":", "endforeach"] -->
-				<div>
+				<!-- <div>
 					<?php foreach($languesDisponibles as $indiceLangue): ?>
 					<a 
 						class="<?= ($langue == $indiceLangue) ? 'actif' : '' ?>" 
@@ -90,7 +93,7 @@ if(isset($_COOKIE['isConnected'])){
 						<?= $indiceLangue ?>
 					</a>
 					<?php endforeach; ?>
-				</div>
+				</div> -->
             </nav>
             <nav class="barre-logo">
                 <label for="cc-btn-responsive" class="material-icons burger">menu</label>
