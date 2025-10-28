@@ -20,7 +20,6 @@ foreach ($catalogue as $codeTheme => $detailTheme) {
 	$produits = array_merge($produits, $detailTheme->produits);
 }
 
-
 // Gestion du tri
 $tri = obtenirCritereTri();
 $produits = trierProduits($produits, $tri);
@@ -74,6 +73,18 @@ $produits = trierProduits($produits, $tri);
 		<?php endforeach; ?>
 	</article>
 </main>
+
+<!-- Gabarit de produit -->
+<template id="gabarit-produit">
+	<div class="produit">
+		<span class="image">
+			<img src="images/produits/teeshirts/ID.webp" alt="NOM">
+		</span>
+		<span class="nom">NOM</span>
+		<span class="prix">PRIX</span>
+	</div>
+</template>
+
 <?php
 // Inclure la partie commune en bas de page.
 include("commun/pied2page.inc.php");

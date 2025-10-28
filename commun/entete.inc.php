@@ -14,7 +14,7 @@ $langue = determinerCodeLangue($languesDisponibles);
 
 ?>
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="<?= $langue; ?>">
 
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
