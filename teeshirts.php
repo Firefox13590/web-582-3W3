@@ -98,6 +98,19 @@ $produits = trierProduits($produits, $tri);
 	</article>
 </main>
 
+<!-- gabarit de produit -->
+<template id="template-produit">
+	<div class="produit" data-item-id="ID">
+		<span class="image">
+			<img src="images/produits/teeshirts/ID.webp" alt="NOM">
+		</span>
+		<span class="nom">NOM</span>
+		<span class="prix">PRIX</span>
+		<!-- <span class="ventes">VENTES</span>
+		<span class="dac">DATE AJOUT CATALOGUE</span> -->
+	</div>
+</template>
+
 <script src="./js/main.js"></script>
 
 <?php 

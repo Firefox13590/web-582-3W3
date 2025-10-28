@@ -87,7 +87,7 @@ function prixAsc($prd1, $prd2)
  */
 function prixDesc($prd1, $prd2)
 {
-    return $prd2->prix - $prd1->prix;
+    return prixAsc($prd2, $prd1);
 }
 
 /**
@@ -116,11 +116,6 @@ function nomAsc($prd1, $prd2)
  */
 function nomDesc($prd1, $prd2)
 {
-    // global $langue;
-    // $collateur = new Collator($langue);
-
-    // return collator_compare($collateur, strtolower($prd2->nom->$langue), strtolower($prd1->nom->$langue));
-    // return nomAsc($prd1, $prd2) * -1;
     return nomAsc($prd2, $prd1);
 }
 
@@ -134,6 +129,5 @@ function nomDesc($prd1, $prd2)
  */
 function dacDesc($prd1, $prd2)
 {
-    // return (int)(strtotime($prd2->dac)) - (int)(strtotime($prd1->dac));
     return strcmp($prd2->dac, $prd1->dac);
 }

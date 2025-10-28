@@ -26,7 +26,7 @@ if(isset($_COOKIE['isConnected'])){
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="<?= $langue; ?>">
 
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">

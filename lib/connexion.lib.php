@@ -167,4 +167,3 @@ function getAccount($data, $file, $errors, $logs){
 
     return [$errors, $logs];
 }
-?>
