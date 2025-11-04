@@ -6,7 +6,7 @@
  * 
  * @return string Critère tri
  */
-function obtenirCriteresTri()
+function obtenirCritereTri()
 {
     if (isset($_GET["tri"]) && $_GET["tri"] != "aleatoire") {
         return $_GET["tri"];
@@ -20,7 +20,7 @@ function obtenirCriteresTri()
  * 
  * @return string Critère filtre
  */
-function obtenirCriteresFiltre()
+function obtenirCritereFiltre()
 {
     if (isset($_GET["filtre"]) && $_GET["filtre"] != "tous") {
         return $_GET["filtre"];

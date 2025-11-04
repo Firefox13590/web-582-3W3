@@ -54,7 +54,7 @@ function afficherProduits(dataProduits){
         singleDataProduct.querySelector(".produit").dataset.itemId = data.id;
         singleDataProduct.querySelector(".image img").src = `images/produits/teeshirts/${data.id}.webp`;
         singleDataProduct.querySelector(".image img").alt = data.nom[langue];
-        singleDataProduct.querySelector(".prix").innerText = new Intl.NumberFormat("fr", {style: "currency", currency: "CAD"}).format(data.prix);
+        singleDataProduct.querySelector(".prix").innerText = new Intl.NumberFormat(langue, {style: "currency", currency: "CAD"}).format(data.prix);
         singleDataProduct.querySelector(".nom").innerText = data.nom[langue];
 
         // ajout au conteneur
