@@ -5,6 +5,17 @@
 -- SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- SET FOREIGN_KEY_CHECKS=0;
 
+-- ----------------
+-- Base de données 'teetim_gr2'
+-- ----------------
+-- 1) Créer la BD avec encodage de caractères et règles d'interclassement
+CREATE DATABASE IF NOT EXISTS teetim_gr2 
+  CHARACTER SET utf8mb4 
+  COLLATE utf8mb4_general_ci;
+
+-- 2) Sélectionner la BD à utiliser pour le reste du programme (script).
+USE teetim_gr2;
+
 -- ---
 -- Table 'categorie'
 -- 
