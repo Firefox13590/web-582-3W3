@@ -1,7 +1,3 @@
--- ---
--- Globals
--- ---
-
 -- SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- SET FOREIGN_KEY_CHECKS=0;
 
@@ -17,6 +13,13 @@ CREATE DATABASE IF NOT EXISTS teetim_gr2
 USE teetim_gr2;
 
 -- ---
+-- Globals
+-- ---
+
+-- SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+-- SET FOREIGN_KEY_CHECKS=0;
+
+-- ---
 -- Table 'categorie'
 -- 
 -- ---
@@ -26,7 +29,8 @@ DROP TABLE IF EXISTS `categorie`;
 CREATE TABLE `categorie` (
   `id` TINYINT NOT NULL AUTO_INCREMENT,
   `nom` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY (`nom`)
 );
 
 -- ---
@@ -44,7 +48,8 @@ CREATE TABLE `produit` (
   `prix` DECIMAL(5,2) NOT NULL,
   `thm_id` TINYINT NOT NULL,
   `cat_id` TINYINT NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY (`nom`, `cat_id`)
 );
 
 -- ---
@@ -57,7 +62,8 @@ DROP TABLE IF EXISTS `theme`;
 CREATE TABLE `theme` (
   `id` TINYINT NOT NULL AUTO_INCREMENT,
   `nom` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY (`nom`)
 );
 
 -- ---

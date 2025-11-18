@@ -3,6 +3,12 @@
 -- Écrire une (et une seule) commande SQL pour ajouter les thèmes et une (et une seule) commande SQL pour ajouter les produits teeshirts dans la bd spécifié dans le fichier implementation.sql, en supposant que l'identifiant de la catégorie 'Teeshirts' sera 1.
 -- Contexte : fichier teeshirts.json et implementation.sql.
 
+-- Table 'categorie'
+INSERT INTO `categorie` (`nom`) VALUES
+('Teeshirts'),
+('Casquettes'),
+('Hoodies');
+
 -- Table 'theme'
 INSERT INTO `theme` (`nom`) VALUES
 ('Animaux'),
@@ -55,7 +61,7 @@ INSERT INTO `produit` (`nom`, `ventes`, `dac`, `prix`, `thm_id`, `cat_id`) VALUE
 ('Brosse à dents temporelle', 29, '2024-07-12', 18.95, 2, 1),
 ('Fourchette féerique', 134, '2023-12-05', 20.50, 2, 1),
 ('Réveil rêveur', 245, '2022-04-28', 22.50, 2, 1),
-('Crayon créatif', 67, '2024-10-15', 19.50, 2, 1),
+('Crayon créatif 2', 67, '2024-10-15', 19.50, 2, 1),
 ('Clavier quantique', 103, '2023-07-30', 25.95, 2, 1),
 ('Bouteille bavarde', 178, '2022-06-11', 21.50, 2, 1),
 ('Tasse télépathique', 52, '2024-03-19', 23.95, 2, 1),

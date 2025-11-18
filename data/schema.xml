@@ -47,6 +47,9 @@
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
+<key type="UNIQUE" name="">
+<part>nom</part>
+</key>
 </table>
 <table x="497" y="115" name="produit">
 <row name="id" null="0" autoincrement="1">
@@ -75,6 +78,10 @@
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
+<key type="UNIQUE" name="">
+<part>nom</part>
+<part>cat_id</part>
+</key>
 </table>
 <table x="210" y="78" name="theme">
 <row name="id" null="0" autoincrement="1">
@@ -85,6 +92,9 @@
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>
+</key>
+<key type="UNIQUE" name="">
+<part>nom</part>
 </key>
 </table>
 </sql>
