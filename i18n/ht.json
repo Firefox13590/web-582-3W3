@@ -1,117 +1,127 @@
 {
-    "moduleEntete": {
+    "entete": {
         "logoAlt": "Lakay",
-        "inputSearchPlaceholder": "Chèche",
-
-        "navTeeshirts": "Tichòt",
-        "navCasquettes": "Kaskèt",
-        "navHoodies": "Sweat",
-        "navAide": "Ede",
-        "navNous": "Sou nou"
+        "recherchePlaceholder": "Chèche",
+        "menuTeeshirts": "Tichòt",
+        "menuCasquettes": "Kaskèt",
+        "menuHoodies": "Sweat",
+        "menuAide": "Ede",
+        "menuNous": "Sou nou"
     },
-    "modulePied": {
-        "titreFooter": "teeTIM",
-
-        "sectionAchats": [
-            "Acha ou yo",
-            "Kesyon yo poze souvan",
-            "Livrezon pakè ou",
-            "Kondisyon vant",
-            "Politik konfidansyalite"
-        ],
-        "sectionAPropos": [
-            "Sou teeTIM",
-            "Konpayi an",
-            "Ekip la",
-            "Travay"
-        ],
-        "sectionCoordonnees": [
-            "Kontakte nou",
-            "Gratis : ",
-            "Imèl : "
-        ],
-
-        "copyright": "&copy; Tout dwa rezève, teeTIM"
+    "pied2page": {
+        "titreSectionAchats": "Acha ou yo",
+        "lienFaq": "Kesyon yo poze souvan",
+        "lienLivraison": "Livrezon pakè ou",
+        "lienConditions": "Kondisyon vant",
+        "lienConfid": "Politik konfidansyalite",
+        "titreSectionCompagnie": "Sou teeTIM",
+        "lienCompagnie": "Konpayi an",
+        "lienEquipe": "Ekip la",
+        "lienEmplois": "Travay",
+        "titreSectionContact": "Kontakte nou",
+        "etiquetteTel": "San frais : ",
+        "etiquetteCourriel": "Imèl : ",
+        "droits": "Tout dwa rezève, teeTIM"
     },
-
-    "pageAccueil": {
+    "accueil": {
         "metaTitre": "teeTIM // fib natirèl ... konsepsyon atifisyèl",
-        "metaDesc": "Paj dakèy pou konseptè rad 100% fèt an Kebèk, fèt pa etidyan TIM ak desen ki soti nan entèlijans atifisyèl, epi fabrike ak fib 100% natirèl ak biyolojik.",
-
-        "amorceH1": "Tichòt, sweat, ak kaskèt fèt an Kebèk 💯",
-        "amorceH2": "Konsepsyon TIM ak ❤️",
-        "amorceH4": "/** ak yon ti èd DALL-E 😉 **/",
-
-        "principalP1": "Jodi a, tichòt se yon rad enpòtan nan tout gadyenwob. E nan epòk kote kesyon anviwònman an enpòtan plis pase tout tan, nou pito tichòt ki fèt an Kebèk pou diminye enpak sou anviwònman epi mete valè sou atizana lokal.",
-        "principalP2": "Tichòt V, kol won, laj oswa ajiste, manch kout oswa manch long pou moun ki frèt, senp oswa ak desen pou mete stil... Tichòt la disponib nan plizyè koulè, stil ak desen."
+        "metaDesc": "Paj dakèy pou konseptè rad 100% fèt an Kebèk, fèt pa etidyan TIM ak desen ki soti nan entèlijans atifisyèl, epi fabrike ak fib 100% natirèl ak byolojik.",
+        "heroTitre": "Tichòt, sweat, ak kaskèt fèt an Kebèk 💯",
+        "heroSousTitre": "Konsepsyon TIM ak ❤️",
+        "heroSousTitre2": "/** ak yon ti èd DALL-E 😉 **/",
+        "para1": "Jodi a, tichòt se yon rad enpòtan nan tout gadyenwob. E nan epòk kote kesyon anviwònman an enpòtan plis pase tout tan, nou pito tichòt ki fèt an Kebèk pou diminye enpak sou anviwònman epi mete valè sou atizana lokal.",
+        "para2": "Tichòt V, kol won, laj oswa ajiste, manch kout oswa manch long pou moun ki frèt, senp oswa ak desen pou mete stil... Tichòt la disponib nan plizyè koulè, stil ak desen."
     },
-
     "catalogue": {
         "etiquetteTri": "Triye pa : ",
-        "triAleatoire": "O aza",
-        "triMeilleurVendeur": "Pi bon vandè",
-        "triPrixAscendant": "Pri / montan",
-        "triPrixDescendant": "Pri / desandan",
-        "triNomAscendant": "Alfa / montan",
-        "triNomDescendant": "Alfa / desandan",
-        "triNouveaute": "Nouvote"
+        "aleatoire": "O aza",
+        "dacDesc": "Nouvote",
+        "prixAsc": "Pri / montan",
+        "prixDesc": "Pri / desandan",
+        "nomAsc": "Alfa / montan",
+        "nomDesc": "Alfa / desandan",
+        "ventesDesc": "Pi bon vandè",
+        "etiquetteFiltre": "Filtre pa tèm : ",
+        "filtreTous": "Tout pwodwi yo"
     },
-
-    "pageTeeshirts": {
-        "metaTitre": "teeTIM // Dekouvri koleksyon tichòt natirèl nou yo fèt an Kebèk",
-        "metaDesc": "Dekouvri koleksyon tichòt natirèl nou yo, fèt an Kebèk pa etidyan TIM, ki melanje kreyativite ak respè pou anviwònman.",
-
-        "titre": "Tichòt nou yo",
+    "teeshirts": {
+        "metaTitre": "TeeTIM - Nos teeshirts",
+        "metaDesc": "Description à venir pour la page teeshirts...",
+        "titrePage": "Tichòt nou yo",
         "enConstruction": "Ap vini..."
     },
-    "pageCasquettes": {
-        "metaTitre": "teeTIM // Dekouvri koleksyon kaskèt natirèl nou yo fèt an Kebèk",
-        "metaDesc": "Eksplore seleksyon kaskèt natirèl nou yo, imajine ak fabrike an Kebèk pa etidyan TIM, ki melanje stil, konfò ak respè pou anviwònman.",
-
-        "titre": "Kaskèt nou yo",
+    "casquettes": {
+        "metaTitre": "TeeTIM - Nos casquettes",
+        "metaDesc": "Description à venir pour la page casquettes...",
+        "titrePage": "Kaskèt nou yo",
         "enConstruction": "Ap vini..."
     },
-    "pageHoodies": {
-        "metaTitre": "teeTIM // Dekouvri koleksyon sweat natirèl nou yo fèt an Kebèk",
-        "metaDesc": "Dekouvri koleksyon sweat natirèl nou yo, fèt an Kebèk pa etidyan TIM, ki melanje konfò, stil ak respè pou anviwònman.",
-
-        "titre": "Sweat nou yo",
+    "hoodies": {
+        "metaTitre": "TeeTIM - Nos hoodies",
+        "metaDesc": "Description à venir pour la page hoodies...",
+        "titrePage": "Sweat nou yo",
         "enConstruction": "Ap vini..."
     },
-    "pageAide": {
-        "metaTitre": "teeTIM // Nou toujou la pou ede w",
-        "metaDesc": "Bezwen èd? Ekip nou la pou ede w. Kontakte nou pou nenpòt kesyon oswa enkyetid sou pwodwi oswa sèvis nou yo.",
-
-        "titre": "Nou toujou la pou ede w",
+    "aide": {
+        "metaTitre": "TeeTIM - Aide",
+        "metaDesc": "Description à venir pour la page aide...",
+        "titrePage": "Ede",
         "enConstruction": "Ap vini..."
     },
-    "pageApropos": {
-        "metaTitre": "teeTIM // TeeTIM an rezime",
-        "metaDesc": "Dekouvri istwa ak misyon teeTIM, yon konpayi Kebèk ki dedye a kreye rad 100% natirèl ak ki respekte anviwònman.",
-
-        "titre": "TeeTIM an rezime",
+    "apropos": {
+        "metaTitre": "TeeTIM - À propos de nous",
+        "metaDesc": "Description à venir pour la page à propos de nous...",
+        "titrePage": "Sou nou",
         "enConstruction": "Ap vini..."
     },
-    "pageConnexion": {
-        "metaTitre": "teeTIM // Konekte ak kont ou",
-        "metaDesc": "Konekte ak kont teeTIM ou pou jwenn enfòmasyon pèsonèl ou, swiv kòmann ou yo epi jwi yon eksperyans acha pèsonalize.",
-
-        "titre": "Koneksyon",
-        "formCommon": {
-            "labelEmail": "Adrès imèl:",
-            "labelPassword": "Modpas:",
-            "placeholderEmail": "Antre adrès imèl ou",
-            "placeholderPassword": "Antre modpas ou"
-        },
-        "formLogin": {
-            "legende": "Konekte"
-        },
-        "formRegister": {
-            "legende": "Kreye yon kont",
-            "labelConfirmPassword": "Konfime modpas la:",
-            "labelName": "Non:",
-            "placeholderConfirmPassword": "Konfime modpas ou",
-            "placeholderName": "Antre non itilizatè ou"
-        }
+    "panier": {
+        "metaTitre": "TeeTIM - Panyen",
+        "metaDesc": "Paj Panyen acha pwodwi TeeTIM yo",
+        "titrePage": "Panyen acha ou",
+        "produitTotal": "Kantite pwodwi: ",
+        "prixTotal": "Sou-total: ",
+        "commandeComplete": "Konplete kòmann nan"
+    },
+    "faq": {
+        "metaTitre": "TeeTIM - FAQ",
+        "metaDesc": "Deskripsyon ap vini pou paj FAQ la...",
+        "titrePage": "Kesyon yo poze souvan",
+        "enConstruction": "Ap vini..."
+    },
+    "livraison": {
+        "metaTitre": "TeeTIM - Livrezon",
+        "metaDesc": "Deskripsyon ap vini pou paj Livrezon an...",
+        "titrePage": "Livrezon pakè ou",
+        "enConstruction": "Ap vini..."
+    },
+    "conditions": {
+        "metaTitre": "TeeTIM - Kondisyon vant",
+        "metaDesc": "Deskripsyon ap vini pou paj Kondisyon an...",
+        "titrePage": "Kondisyon vant",
+        "enConstruction": "Ap vini..."
+    },
+    "confidentialite": {
+        "metaTitre": "TeeTIM - Politik Konfidansyalite",
+        "metaDesc": "Deskripsyon ap vini pou paj Politik la...",
+        "titrePage": "Politik Konfidansyalite",
+        "enConstruction": "Ap vini..."
+    },
+    "compagnie": {
+        "metaTitre": "TeeTIM - Konpayi an",
+        "metaDesc": "Deskripsyon ap vini pou paj Konpayi an...",
+        "titrePage": "Konpayi an",
+        "enConstruction": "Ap vini..."
+    },
+    "equipe": {
+        "metaTitre": "TeeTIM - Ekip la",
+        "metaDesc": "Deskripsyon ap vini pou paj Ekip la...",
+        "titrePage": "Ekip la",
+        "enConstruction": "Ap vini..."
+    },
+    "emploi": {
+        "metaTitre": "TeeTIM - Travay",
+        "metaDesc": "Deskripsyon ap vini pou paj Travay yo...",
+        "titrePage": "Travay",
+        "enConstruction": "Ap vini..."
     }
 }

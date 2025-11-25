@@ -1,25 +1,20 @@
-<?php 
-// indiquer page
-$page = "accueil";
+<?php
+    // Créer et affecter à une variable l'indication de la page courante
+    $page = "accueil";
 
-// inclure contenu de l'entete ici
-// ressemble a un copier/coller
-include("modules/entete.mod.php"); 
+    include("commun/entete.inc.php");
 ?>
-
-<main class="page-accueil">
-    <article class="amorce">
-        <h1><?= $obj_page->amorceH1; ?></h1>
-        <h2><?= $obj_page->amorceH2; ?></h2>
-        <h4><?= $obj_page->amorceH4; ?></h4>
-    </article>
-    <article class="principal">
-        <p><?= $obj_page->principalP1; ?></p>
-        <p><?= $obj_page->principalP2; ?></p>
-    </article>
-</main>
-
-<?php 
-// inclure contenu du pied de page ici
-include("modules/pied.mod.php"); 
+        <main class="page-accueil">
+            <article class="amorce">
+                <h1><?= $_->heroTitre; ?></h1>
+                <h2><?= $_->heroSousTitre; ?></h2>
+                <h4><?= $_->heroSousTitre2; ?></h4>
+            </article>
+            <article class="principal">
+                <p><?= $_->para1; ?></p>
+                <p><?= $_->para2; ?></p>
+            </article>
+        </main>
+<?php
+    include("commun/pied2page.inc.php");
 ?>

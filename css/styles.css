@@ -202,38 +202,176 @@ main.page-produits .amorce .controle select {
 }
 
 /* TP/Volet 1 : Mobile */
-main.page-produits .amorce{
-    font-size: clamp(.625rem, 1.25vw, 1.25rem);
-    margin-bottom: 48px;
-}
-
 main.page-produits .principal {
-    margin: 0 9%;
+    width: 90vw;
+    margin: 1rem auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 1rem;
 }
 
 main.page-produits .principal .produit {
-    flex-basis: 135px;
+    width: 20%;
+    min-width: 15rem;
+    max-width: 22rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main.page-produits .principal .produit .nom {
+    text-align: center;
+}
+
+main.page-produits .principal .produit .prix {
+    text-align: center;
+    font-weight: bold;
+}
+
+main.page-produits .principal .produit .image {
+    position: relative;
+}
+
+main.page-produits .principal .produit .ventes {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(6, 170, 6);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+
+    z-index: 10;
 }
 
 main.page-produits .principal .produit .image img {
     width: 100%;
-}
-
-main.page-produits .principal .produit span{
-    text-align: center;
     display: block;
+    border-radius: 4px;
 }
 
-main.page-produits .principal .produit .prix{
-    font-weight: bold;
+/*Page Panier*/
+.page-panier {
+    width: 90%;
+    margin: 2rem auto;
+    padding-bottom: 3rem;
+}
+
+.page-panier .amorce {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.page-panier .amorce h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 
+.produit-panier {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
 
+.produit-haut {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.image-produit-panier {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.texte-panier {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.produit-bas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.produit-bas .couleur-panier-vert {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background-color: #289a42;
+}
+
+.produit-bas .couleur-panier-orange {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background-color: #ef9f2f;
+}
+
+.taille,
+.quantite,
+.prix {
+    font-size: 0.95rem;
+}
+
+.quantite{
+    border: 1px black solid;
+    padding: 0 1rem;
+}
+
+.trash {
+    cursor: pointer;
+    color: #444;
+    transition: color 0.2s ease;
+    font-size: 0.75rem;
+}
+
+.trash:hover {
+    color: crimson;
+}
+
+.prix-panier {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.nombre-produit {
+    color: #555;
+}
+
+.commande {
+    background-color: #1f8136;
+    font-family: 'Noto Sans';
+    color: white;
+    border: none;
+    padding: 0.6rem 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.commande:hover {
+    background-color: #218838;
+}
 
 /* Pied de page */
 footer {
@@ -342,25 +480,32 @@ footer .da {
         margin: 0 1rem;
     }
 
+    /*Page Panier*/
+    main.page-panier{
+        width: 50%;
+    }
+    .produit-panier{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .produit-bas{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .prix-panier{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
     footer div.contenu {
         flex-direction: row;
         justify-content: center;
         align-items: initial;
         text-align: initial;
         column-gap: 3rem;
-    }
-
-
-    /* etape 6 pc */
-    main.page-produits .principal {
-        margin: 0 8%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    main.page-produits .principal .produit {
-        flex-basis: 300px;
     }
 }

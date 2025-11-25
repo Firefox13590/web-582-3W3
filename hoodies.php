@@ -1,18 +1,15 @@
-<?php 
-    // Indiquer la page
+<?php
     $page = "hoodies";
-    include("modules/entete.mod.php"); 
+    include("commun/entete.inc.php");
 ?>
     <main class="page-produits page-hoodies">
-        <!-- externalisation des textes -->
         <article class="amorce">
-            <h1><?= $obj_page->titre; ?></h1>
+            <h1><?= $_->titrePage; ?></h1>
         </article>
         <article class="principal">
-            <?= $obj_page->enConstruction; ?>
+            <?= $_->enConstruction; ?>
         </article>
     </main>
-<?php 
-// inclure contenu du pied de page ici
-include("modules/pied.mod.php"); 
+<?php
+    include("commun/pied2page.inc.php");
 ?>

@@ -1,0 +1,9 @@
+    <link rel="stylesheet" href="css/bonus.css">
+                
+                <!-- nouvelle section du nav pour page connexion -->
+				<div class="connexion">
+					<span class="material-icons-outlined account-icon">account_circle</span>
+					<a href="connexion.php" class="btn-connexion <?= $isConnected ? 'actif' : ''; ?>">
+						<?= $isConnected ? "Bonjour, $userName" : 'Se connecter'; ?>
+					</a>
+				</div>

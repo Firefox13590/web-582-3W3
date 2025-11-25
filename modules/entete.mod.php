@@ -11,7 +11,7 @@ $langue = determinerCodeLangue($languesDisponibles);
 // print_r($langue);
 
 // recupere textes statiques et les affecte a des raccourcis via array destructuring
-[$obj_ent, $obj_pied, $obj_page, $obj_cat] = obtenirTextesStatiques($langue, $page);
+[$_ent, $_pp, $_, $_cat] = obtenirTextesStatiques($langue, $page);
 
 
 /*********************
@@ -36,8 +36,8 @@ if(isset($_COOKIE['isConnected'])){
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $obj_page->metaTitre; ?></title>
-    <meta name="description" content="<?= $obj_page->metaDesc; ?>">
+    <title><?= $_pp->metaTitre; ?></title>
+    <meta name="description" content="<?= $_pp->metaDesc; ?>">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/bonus.css">
     <link rel="icon" type="image/png" href="images/favicon.png" />
@@ -98,18 +98,18 @@ if(isset($_COOKIE['isConnected'])){
             <nav class="barre-logo">
                 <label for="cc-btn-responsive" class="material-icons burger">menu</label>
                 <!-- quand balise php contient juste echo, remplace "?php" par "?=" -->
-                <a class="logo" href="index.php"><img src="images/logo.png" alt="<?= $obj_ent->logoAlt; ?>"></a>
+                <a class="logo" href="index.php"><img src="images/logo.png" alt="<?= $_ent->logoAlt; ?>"></a>
                 <a class="material-icons panier" href="panier.php">shopping_cart</a>
-                <input class="recherche" type="search" name="motscles" placeholder="<?= $obj_ent->inputSearchPlaceholder ?>">
+                <input class="recherche" type="search" name="motscles" placeholder="<?= $_ent->inputSearchPlaceholder ?>">
             </nav>
             <input type="checkbox" id="cc-btn-responsive">
             <nav class="principale">
                 <label for="cc-btn-responsive" class="menu-controle material-icons">close</label>
-                <a <?= $page == "teeshirts" ? "class='actif'" : ""; ?> href="teeshirts.php"><?= $obj_ent->navTeeshirts; ?></a>
-                <a <?= $page == "casquettes" ? "class='actif'" : ""; ?> href="casquettes.php"><?= $obj_ent->navCasquettes; ?></a>
-                <a <?= $page == "hoodies" ? "class='actif'" : ""; ?> href="hoodies.php"><?= $obj_ent->navHoodies; ?></a>
+                <a <?= $page == "teeshirts" ? "class='actif'" : ""; ?> href="teeshirts.php"><?= $_ent->navTeeshirts; ?></a>
+                <a <?= $page == "casquettes" ? "class='actif'" : ""; ?> href="casquettes.php"><?= $_ent->navCasquettes; ?></a>
+                <a <?= $page == "hoodies" ? "class='actif'" : ""; ?> href="hoodies.php"><?= $_ent->navHoodies; ?></a>
                 <span class="separateur"></span>
-                <a <?= $page == "aide" ? "class='actif'" : ""; ?> href="aide.php"><?= $obj_ent->navAide; ?></a>
-                <a <?= $page == "apropos" ? "class='actif'" : ""; ?> href="apropos.php"><?= $obj_ent->navNous; ?></a>
+                <a <?= $page == "aide" ? "class='actif'" : ""; ?> href="aide.php"><?= $_ent->navAide; ?></a>
+                <a <?= $page == "apropos" ? "class='actif'" : ""; ?> href="apropos.php"><?= $_ent->navNous; ?></a>
             </nav>
         </header>

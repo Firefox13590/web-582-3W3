@@ -1,117 +1,127 @@
 {
-    "moduleEntete": {
+    "entete": {
         "logoAlt": "Home",
-        "inputSearchPlaceholder": "Search",
-
-        "navTeeshirts": "T-shirts",
-        "navCasquettes": "Caps",
-        "navHoodies": "Hoodies",
-        "navAide": "Help",
-        "navNous": "About us"
+        "recherchePlaceholder": "Search",
+        "menuTeeshirts": "T-shirts",
+        "menuCasquettes": "Caps",
+        "menuHoodies": "Hoodies",
+        "menuAide": "Help",
+        "menuNous": "About us"
     },
-    "modulePied": {
-        "titreFooter": "teeTIM",
-
-        "sectionAchats": [
-            "Your purchases",
-            "Frequently Asked Questions",
-            "Your package delivery",
-            "Terms of sale",
-            "Privacy policy"
-        ],
-        "sectionAPropos": [
-            "About teeTIM",
-            "The company",
-            "The team",
-            "Jobs"
-        ],
-        "sectionCoordonnees": [
-            "Contact us",
-            "Toll-free: ",
-            "Email: "
-        ],
-
-        "copyright": "&copy; All rights reserved, teeTIM"
+    "pied2page": {
+        "titreSectionAchats": "Your purchases",
+        "lienFaq": "Frequently Asked Questions",
+        "lienLivraison": "Your package delivery",
+        "lienConditions": "Terms of sale",
+        "lienConfid": "Privacy policy",
+        "titreSectionCompagnie": "About teeTIM",
+        "lienCompagnie": "The company",
+        "lienEquipe": "The team",
+        "lienEmplois": "Jobs",
+        "titreSectionContact": "Contact us",
+        "etiquetteTel": "Toll-free: ",
+        "etiquetteCourriel": "Email: ",
+        "droits": "All rights reserved, teeTIM"
     },
-
-    "pageAccueil": {
-        "metaTitre": "teeTIM // natural fiber ... artificial design",
-        "metaDesc": "Homepage of the clothing designer 100% made in Quebec, designed by TIM students using AI-generated designs, and manufactured with 100% natural and organic fibers.",
-
-        "amorceH1": "T-shirts, hoodies, and caps made in Quebec 💯",
-        "amorceH2": "Designed at TIM with ❤️",
-        "amorceH4": "/** with a little help from DALL-E 😉 **/",
-
-        "principalP1": "Today, the T-shirt is an essential piece of clothing in everyone’s wardrobe. And in an era where environmental issues matter more than ever, we prefer T-shirts made in Quebec to reduce environmental impact and highlight local craftsmanship.",
-        "principalP2": "V-neck T-shirt, crew neck, loose or fitted, short-sleeved or long-sleeved for those who get cold easily, plain or patterned to style an outfit… The T-shirt is available in a variety of colors, styles, and patterns."
+    "accueil": {
+        "metaTitre": "teeTIM // natural fibers... artificial design",
+        "metaDesc": "Homepage of the designer of 100% Quebec-made clothing, designed by TIM students using AI-generated designs, and made with 100% natural and organic fibers.",
+        "heroTitre": "T-shirts, hoodies, and caps made in Quebec 💯",
+        "heroSousTitre": "Designed at TIM with ❤️",
+        "heroSousTitre2": "/** with a little help from DALL-E 😉 **/",
+        "para1": "Today, the t-shirt is an essential item in everyone's wardrobe. And in an era where environmental concerns are more pressing than ever, we prefer t-shirts made in Quebec to reduce environmental impact and highlight local craftsmanship.",
+        "para2": "V-neck t-shirts, crew neck, loose or fitted, short-sleeved or long-sleeved for the chilly ones, plain or patterned to style an outfit… The t-shirt comes in a variety of colors, styles, and patterns."
     },
-
     "catalogue": {
         "etiquetteTri": "Sort by: ",
-        "triAleatoire": "Random",
-        "triMeilleurVendeur": "Best seller",
-        "triPrixAscendant": "Price / ascending",
-        "triPrixDescendant": "Price / descending",
-        "triNomAscendant": "Alpha / ascending",
-        "triNomDescendant": "Alpha / descending",
-        "triNouveaute": "New arrival"
+        "aleatoire": "Random",
+        "dacDesc": "New Arrivals",
+        "prixAsc": "Price / ascending",
+        "prixDesc": "Price / descending",
+        "nomAsc": "Alpha / ascending",
+        "nomDesc": "Alpha / descending",
+        "ventesDesc": "Best seller",
+        "etiquetteFiltre": "Filter by theme: ",
+        "filtreTous": "All products"
     },
-
-    "pageTeeshirts": {
-        "metaTitre": "teeTIM // Discover our collection of 100% natural T-shirts designed in Quebec",
-        "metaDesc": "Discover our collection of 100% natural T-shirts, designed in Quebec by TIM students, combining creativity and environmental respect.",
-
-        "titre": "Our T-shirts",
+    "teeshirts": {
+        "metaTitre": "TeeTIM - Our t-shirts",
+        "metaDesc": "",
+        "titrePage": "Our t-shirts",
         "enConstruction": "Coming soon..."
     },
-    "pageCasquettes": {
-        "metaTitre": "teeTIM // Discover our collection of 100% natural caps designed in Quebec",
-        "metaDesc": "Explore our selection of 100% natural caps, imagined and manufactured in Quebec by TIM students, combining style, comfort and environmental respect.",
-
-        "titre": "Our caps",
+    "casquettes": {
+        "metaTitre": "TeeTIM - Our caps",
+        "metaDesc": "",
+        "titrePage": "Our caps",
         "enConstruction": "Coming soon..."
     },
-    "pageHoodies": {
-        "metaTitre": "teeTIM // Discover our collection of 100% natural hoodies designed in Quebec",
-        "metaDesc": "Discover our collection of 100% natural hoodies, designed in Quebec by TIM students, combining comfort, style, and environmental respect.",
-
-        "titre": "Our hoodies",
+    "hoodies": {
+        "metaTitre": "TeeTIM - Our hoodies",
+        "metaDesc": "",
+        "titrePage": "Our hoodies",
         "enConstruction": "Coming soon..."
     },
-    "pageAide": {
-        "metaTitre": "teeTIM // We are always here to help",
-        "metaDesc": "Need help? Our team is here to assist you. Contact us for any questions or concerns about our products or services.",
-
-        "titre": "We are always here to help",
+    "aide": {
+        "metaTitre": "TeeTIM - Help",
+        "metaDesc": "",
+        "titrePage": "Help",
         "enConstruction": "Coming soon..."
     },
-    "pageApropos": {
-        "metaTitre": "teeTIM // About teeTIM",
-        "metaDesc": "Discover the story and mission of teeTIM, a Quebec company dedicated to creating 100% natural and environmentally friendly clothing.",
-
-        "titre": "About teeTIM",
+    "apropos": {
+        "metaTitre": "TeeTIM - About us",
+        "metaDesc": "",
+        "titrePage": "About us",
         "enConstruction": "Coming soon..."
     },
-    "pageConnexion": {
-        "metaTitre": "teeTIM // Sign in to your account",
-        "metaDesc": "Sign in to your teeTIM account to access your personal information, track your orders, and enjoy a personalized shopping experience.",
-
-        "titre": "Sign in",
-        "formCommon":{
-            "labelEmail": "Email address:",
-            "labelPassword": "Password:",
-            "placeholderEmail": "Enter your email address",
-            "placeholderPassword": "Enter your password"
-        },
-        "formLogin": {
-            "legende": "Sign in"
-        },
-        "formRegister": {
-            "legende": "Create an account",
-            "labelConfirmPassword": "Confirm password:",
-            "labelName": "Name:",
-            "placeholderConfirmPassword": "Confirm your password",
-            "placeholderName": "Enter your username"
-        }
+    "panier": {
+        "metaTitre": "TeeTIM - Cart",
+        "metaDesc": "TeeTIM products shopping cart page",
+        "titrePage": "Your Shopping Cart",
+        "produitTotal": "Total items: ",
+        "prixTotal": "Subtotal: ",
+        "commandeComplete": "Complete the order"
+    },
+    "faq": {
+        "metaTitre": "TeeTIM - FAQ",
+        "metaDesc": "Description coming soon for the FAQ page...",
+        "titrePage": "Frequently Asked Questions",
+        "enConstruction": "Coming soon..."
+    },
+    "livraison": {
+        "metaTitre": "TeeTIM - Delivery",
+        "metaDesc": "Description coming soon for the Delivery page...",
+        "titrePage": "Delivery of your package",
+        "enConstruction": "Coming soon..."
+    },
+    "conditions": {
+        "metaTitre": "TeeTIM - Terms of Sale",
+        "metaDesc": "Description coming soon for the Terms page...",
+        "titrePage": "Terms of Sale",
+        "enConstruction": "Coming soon..."
+    },
+    "confidentialite": {
+        "metaTitre": "TeeTIM - Privacy Policy",
+        "metaDesc": "Description coming soon for the Privacy Policy page...",
+        "titrePage": "Privacy Policy",
+        "enConstruction": "Coming soon..."
+    },
+    "compagnie": {
+        "metaTitre": "TeeTIM - The Company",
+        "metaDesc": "Description coming soon for the Company page...",
+        "titrePage": "The Company",
+        "enConstruction": "Coming soon..."
+    },
+    "equipe": {
+        "metaTitre": "TeeTIM - The Team",
+        "metaDesc": "Description coming soon for the Team page...",
+        "titrePage": "The Team",
+        "enConstruction": "Coming soon..."
+    },
+    "emploi": {
+        "metaTitre": "TeeTIM - Jobs",
+        "metaDesc": "Description coming soon for the Jobs page...",
+        "titrePage": "Jobs",
+        "enConstruction": "Coming soon..."
     }
 }

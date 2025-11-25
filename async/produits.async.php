@@ -23,7 +23,7 @@ foreach($dataTeeshirts as $codeTheme => $detailsTheme){
 /* GESTION TRI */
 include('../lib/filterNSort.lib.php');
 
-$tri = obtenirCriteresTri();
+$tri = obtenirCritereTri();
 // $filtre = obtenirCriteresFiltre();
 $produits = trierProduits($produits, $tri);
 

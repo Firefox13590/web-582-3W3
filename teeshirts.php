@@ -1,119 +1,121 @@
-<?php 
-// indiquer page
+<?php
 $page = "teeshirts";
+include("commun/entete.inc.php");
+include("lib/catalogue.lib.php");
 
-// inclure contenu de l'entete ici
-// ressemble a un copier/coller
-include("modules/entete.mod.php");
+// Intégrer le fichier JSON contenant les produits
+$catalogue = json_decode(file_get_contents("data/teeshirts.json"));
 
-// recupere donnees teeshirts
-$dataTeeshirts = json_decode(file_get_contents('data/teeshirts.json'));
-// var_dump($dataTeeshirts);
-
-// extraire themes et produits catalogue
+// On crée deux tableaux pour stocker les thèmes et les produits
 $themes = [];
 $produits = [];
 
-// affichage dynamique chaque produit t-shirts
-foreach($dataTeeshirts as $codeTheme => $detailsTheme){
-	$themes[$codeTheme] = $detailsTheme->nomTheme->$langue;
-	$produits = array_merge($produits, $detailsTheme->produits);
-	// var_dump($detailsTheme->produits);
+// création d'un autre tableau pour compter le nombre de produits par thèmes
+$nbProduitsTheme = [];
+
+// On parcourt le catalogue pour sortir les thèmes et fusionner les produits
+foreach ($catalogue as $codeTheme => $detailTheme) {
+    $themes[$codeTheme] = $detailTheme->theme->$langue ?? $detailTheme->theme->fr;
+
+    // Compter le nombre de produits par thème
+    $nbProduitsTheme[$codeTheme] = count($detailTheme->produits);
+
+    // Fusionner avec le tableau $produits
+    $produits = array_merge($produits, $detailTheme->produits);
 }
-// var_dump($themes);
-// var_dump($produits);
 
-
-/* GESTION TRI */
-include('lib/filterNSort.lib.php');
-
-$tri = obtenirCritereTri();
+// filtre des produits avant le tri
 $filtre = obtenirCritereFiltre();
+$produits = filtrerProduits($produits, $filtre);
+// Le tri des produits est fait à la fin, après le filtrage.
+$tri = obtenirCritereTri();
 $produits = trierProduits($produits, $tri);
-
-
-// methode 1 formattage nombre
-// remplacee par deuxieme methode en 1 ligne
-/* FORMATTAGE PRIX */
-// $frmt = obtenirFormatteurNombre($langue);
-
 ?>
-
 <main class="page-produits page-teeshirts">
     <article class="amorce">
-        <h1><?= $obj_page->titre; ?></h1>
-
-		<form class="controle" action="">
-			<div class="filtre">
-				<label for="filtre">Filtrer par thème : </label>
-				<select name="filtre" id="filtre">
-					<option value="tous" id="">Tous les produits</option>
-					
-					<?php foreach($themes as $themeKey => $themeValue): ?>
-					<option value="<?= $themeKey; ?>" <?= $filtre == $themeKey ? "selected" : ""; ?>><?= $themeValue; ?></option>
-					<?php endforeach; ?>
-
-					<!-- <option value="animaux">Animaux</option>
-					<option value="nature">Nature</option>
-					<option value="jeux">Jeux vidéo</option>
-					<option value="inusite">Inusité</option>
-					<option value="sport">Sport</option> -->
-				</select>
-			</div>
-
-			<div class="tri">
-				<label for="tri"><?= $obj_cat->etiquetteTri; ?></label>
-				<select name="tri" id="tri">
-					<option value="aleatoire" <?= $tri == "aleatoire" ? "selected" : ""; ?>><?= $obj_cat->triAleatoire; ?></option>
-					<option value="ventesDesc" <?= $tri == "ventesDesc" ? "selected" : ""; ?>><?= $obj_cat->triMeilleurVendeur; ?></option>
-					<option value="prixAsc" <?= $tri == "prixAsc" ? "selected" : ""; ?>><?= $obj_cat->triPrixAscendant; ?></option>
-					<option value="prixDesc" <?= $tri == "prixDesc" ? "selected" : ""; ?>><?= $obj_cat->triPrixDescendant; ?></option>
-					<option value="nomAsc" <?= $tri == "nomAsc" ? "selected" : ""; ?>><?= $obj_cat->triNomAscendant; ?></option>
-					<option value="nomDesc" <?= $tri == "nomDesc" ? "selected" : ""; ?>><?= $obj_cat->triNomDescendant; ?></option>
-					<option value="dacDesc" <?= $tri == "dacDesc" ? "selected" : ""; ?>><?= $obj_cat->triNouveaute; ?></option>
-				</select>
-			</div>
-		</form>
+        <h1><?= $_->titrePage; ?></h1>
+        <form class="controle" action="">
+            <div class="filtre">
+                <label for="filtre"><?= $_cat->etiquetteFiltre; ?> </label>
+                <select name="filtre" id="filtre">
+                    <option <?= ($filtre == "tous") ? "selected" : ""; ?>
+                        value="tous"><?= $_cat->filtreTous; ?>
+                        (<?= count($produits); ?>) </option>
+                    <!-- Générer les options des thèmes dynamiquement -->
+                    <?php foreach ($themes as $codeTheme => $nomTheme) : ?>
+                        <option <?= ($filtre == $codeTheme) ? "selected" : ""; ?>
+                            value="<?= $codeTheme; ?>"><?= $nomTheme; ?>
+                            (<?= $nbProduitsTheme[$codeTheme]; ?>)</option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="tri">
+                <label for="tri"><?= $_cat->etiquetteTri; ?></label>
+                <select name="tri" id="tri">
+                    <option <?= ($tri == "aleatoire") ? "selected" : ""; ?> value="aleatoire"><?= $_cat->aleatoire; ?></option>
+                    <option <?= ($tri == "ventesDesc") ? "selected" : ""; ?> value="ventesDesc"><?= $_cat->ventesDesc; ?></option>
+                    <option <?= ($tri == "prixAsc") ? "selected" : ""; ?> value="prixAsc"><?= $_cat->prixAsc; ?></option>
+                    <option <?= ($tri == "prixDesc") ? "selected" : ""; ?> value="prixDesc"><?= $_cat->prixDesc; ?></option>
+                    <!-- Pour les besoins du TP, nous ne gérons pas le tri par nom et par date d'ajout -->
+                    <!--
+                        <option <?= ($tri == "nomAsc") ? "selected" : ""; ?> value="nomAsc"><?= $_cat->nomAsc; ?></option>
+                        <option <?= ($tri == "nomDesc") ? "selected" : ""; ?> value="nomDesc"><?= $_cat->nomDesc; ?></option>
+                        <option <?= ($tri == "dacDesc") ? "selected" : ""; ?> value="dacDesc"><?= $_cat->dacDesc; ?></option>
+                    -->
+                </select>
+            </div>
+        </form>
     </article>
-	<!-- controle tri et filtre -->
-	
     <article class="principal">
-		<?php foreach($produits as $item): ?>
-		<div class="produit" data-item-id="<?= $item->id; ?>">
-			<span class="image">
-				<img src="images/produits/teeshirts/<?= $item->id; ?>.webp" alt="<?= $item->nom->$langue; ?>">
-			</span>
-			<span class="nom"><?= $item->nom->$langue; ?></span>
-			<!-- 
-			methode 1 formattage nombre
-			remplacee par deuxieme methode en 1 ligne
-			-->
-			<!-- <span class="prix"><?= ''; //$frmt->formatCurrency($item->prix, "CAD"); ?></span> -->
-			 <!-- methode 2 -->
-			<span class="prix"><?= MessageFormatter::formatMessage($langue, "{0, number, :: currency/CAD}", [$item->prix]); ?></span>
-			<span class="ventes"><?= $item->ventes; ?></span>
-			<span class="dac"><?= $item->dac; ?></span>
-		</div>
-		<?php endforeach; ?>
-	</article>
+        <!-- Gabarit -->
+        <?php foreach ($produits as $prd) : ?>
+            <div class="produit">
+
+                <span class="image">
+                    <?php
+                    $nbVentes = $prd->ventes;
+                    if ($nbVentes > 0):
+                    ?>
+                        <span class="ventes">
+                            <?php
+                            echo ($nbVentes);
+                            ?>
+                        </span>
+                    <?php endif;
+
+                    //chemin d'accès vers l'image demandé en fonction du id
+                    $cheminImage = "images/produits/teeshirts/" . $prd->id . ".webp";
+                    //si l'image n'existe pas, utiliser l'image par défaut.
+                    if (!file_exists($cheminImage)) {
+                        $cheminImage = "images/produits/teeshirts/ts0000.webp";
+                    }
+                    ?>
+                    <img src="<?= $cheminImage; ?> " alt="<?= $prd->nom->$langue ?? $prd->nom->fr; ?>">
+                </span>
+
+                <span class="nom"><?= $prd->nom->$langue ?? $prd->nom->fr; ?></span>
+                <span class="prix"><?= MessageFormatter::formatMessage($langue, "{0, number, :: currency/CAD}", [$prd->prix]) ?></span>
+            </div>
+        <?php endforeach; ?>
+    </article>
 </main>
 
-<!-- gabarit de produit -->
-<template id="template-produit">
-	<div class="produit" data-item-id="ID">
-		<span class="image">
-			<img src="images/produits/teeshirts/ID.webp" alt="NOM">
-		</span>
-		<span class="nom">NOM</span>
-		<span class="prix">PRIX</span>
-		<!-- <span class="ventes">VENTES</span>
-		<span class="dac">DATE AJOUT CATALOGUE</span> -->
-	</div>
+<!-- Gabarit à utiliser pour implémenter l'affichage asynchrone des produits -->
+<!-- Adapter le gabarit ci-dessous pour répondre aux besoins du TP -->
+<template id="gabarit-produit">
+    <div class="produit">
+        <span class="image">
+            <span class="ventes">indicateur ventes</span>
+            <img
+                src="images/produits/teeshirts/[ID].webp"
+                alt="Nom du produit dans la langue courante">
+        </span>
+        <span class="nom">Nom du produit dans la langue courante</span>
+        <span class="prix">
+            <span class="montant">XX.XX</span>
+        </span>
+    </div>
 </template>
-
-<script src="./js/main.js"></script>
-
-<?php 
-// inclure contenu du pied de page ici
-include("modules/pied.mod.php"); 
+<?php
+include("commun/pied2page.inc.php");
 ?>

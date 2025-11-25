@@ -1,5 +1,5 @@
 <?php
-$page = "casquettes";
+$page = "confidentialite";
 include("commun/entete.inc.php");
 ?>
 <main class="page-produits page-casquettes">

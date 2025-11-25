@@ -1,86 +1,71 @@
 <?php
+// ATTENTION : TOUTE fonction doit avoir un commentaire de type PHPDoc.
 
 /**
- * Librairie des fonctions associes au module d'internationnalisation (i18n)
- */
-
-
-/**
- * Retourne un array avec les codes des langues disponibles
- * en lisant les fichiers json dans le dossier i18n
+ * Obtient la liste des codes de langues disponibles sur le site.
  * 
- * @return array Tableau des codes (2 lettres) de langues disponibles.
+ * @return array Tableau des codes de langues en 2 lettres. 
  */
-function obtenirLanguesDisponibles()
-{
-    // dossier i18n
-    $i18nFolder = scandir("i18n");
-    // print_r($i18nFolder);
+function obtenirLanguesDisponibles() {
     $langues = [];
-
-    for ($i = 2; $i < count($i18nFolder); $i++) {
-        $langueFichier = basename($i18nFolder[$i], '.json');
-        array_push($langues, $langueFichier);
+    $contenuI18n = scandir("i18n");
+    foreach ($contenuI18n as $nomFichier) {
+        if ($nomFichier != "." && $nomFichier != "..") {
+            $langues[] = substr($nomFichier, 0, 2);
+        }
     }
-
     return $langues;
 }
 
-
 /**
- * Determine le code de la langue a utiliser
- * en fonction des langues disponibles, du cookie et de la querystring
+ * Détermine la langue d'affichage du site.
  * 
- * @param array $languesDisponibles Tableau des codes de langues disponibles
+ * @param array $languesPermises Tableau des langues disponibles.
  * 
- * @return string String du code de la langue (2 lettres)
+ * @return string Code de la langue à utiliser.
  */
-function determinerCodeLangue($languesDisponibles)
-{
-    // $languesDisponibles = obtenirLanguesDisponibles();
-    // langue par défaut
+function determinerLangue($languesPermises) {
+    // Langue par défaut
     $langue = "fr";
 
-    // recupere array assosiatif (index nommes) avec tous param requete http (querystring)
-    if (isset($_COOKIE["lan"]) && in_array($_COOKIE["lan"], $languesDisponibles)) {
-        $langue = $_COOKIE["lan"];
+    // Valeur de langue sauvgardée en cookie
+    if(isset($_COOKIE["choixLangue"]) && in_array($_COOKIE["choixLangue"], $languesPermises)) {
+        $langue = $_COOKIE["choixLangue"];
     }
 
-    // langue dynamique (apres clique sur btn de langue)
-    if (isset($_GET["lan"]) && in_array($_GET["lan"], $languesDisponibles)) {
-        $langue = $_GET['lan'];
-        // echo 'updated language';
-        // retenir choix de langue dans temoin HTTP (cookie)
-        setcookie("lan", $langue, time() + 60 * 60 * 24 * 30);
+    // Valeur de langue arrivée en paramètre URL
+    if(isset($_GET["lan"]) && in_array($_GET["lan"], $languesPermises)) {
+        $langue = $_GET["lan"];
+        // RETENIR CE CHOIX DANS UN COOKIE!
+        setcookie("choixLangue", $langue, time() + 365*24*3600);
     }
 
     return $langue;
 }
 
-
 /**
- * Obtenir les textes statiques pour l'entete, le pied de page et la page specifique
+ * Obtient les textes statiques de la page à partir du fichier JSON 
+ * adéquat.
  * 
- * @param string $codeLangue Code (2 lettres) de la langue
- * @param string $indicePage Etiquette associe avec la page affichee
+ * @param string $codeLangue Code de la langue.
+ * @param string $nomPage Nom de la page requise.
  * 
- * @return array Tableau avec 4 objets (entete, pied, page specifique, catalogue)
+ * @return array Tableau contenant des raccourcis pour les textes de 
+ *               l'entête, du pied de page et du contenu spécifique de 
+ *               la page. 
  */
-function obtenirTextesStatiques($codeLangue, $indicePage)
-{
-    // lire fichier json
-    $json = file_get_contents("i18n/$codeLangue.json");
-    // convertir en objet (ou autre structure) php
-    $obj = json_decode($json);
-    // formattage indice page pour acceder a la propriete dynamique
-    $propertyPageName = "page" . ucfirst($indicePage);
+function obtenirTextesStatiques($codeLangue, $nomPage) {
+    // Lire le contenu du fichier des textes statiques.
+    $textesJson = file_get_contents("i18n/$codeLangue.json");
 
-    return [$obj->moduleEntete, $obj->modulePied, $obj->$propertyPageName, $obj->catalogue];
+    // Convertir la chaîne JSON obtenue en un tableau PHP.
+    $textes = json_decode($textesJson);
+
+    // Définir et retourner des raccourcis utiles.
+    return [
+            $textes->entete, 
+            $textes->pied2page, 
+            $textes->$nomPage,
+            $textes->catalogue
+        ];
 }
-
-// methode 1 formattage nombre
-// remplacee par deuxieme methode en 1 ligne
-// function obtenirFormatteurNombre($locale){
-//     return new NumberFormatter($locale, NumberFormatter::CURRENCY);
-// }
-
