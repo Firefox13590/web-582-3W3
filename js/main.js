@@ -1,21 +1,21 @@
 // 1) Méthode traditionnelle
 // Soumettre le formulaire de filtre et tri lorsqu'une option 
 // dans l'une ou l'autre des listes change.
-// document.querySelectorAll("form.controle select").forEach(
-//     eltSelect => eltSelect.addEventListener("change", 
-//         evt => evt.target.form.submit()
-//     )
-// );
-
-// Méthode utilisant la technique Ajax
 document.querySelectorAll("form.controle select").forEach(
     eltSelect => eltSelect.addEventListener("change", 
-        evt => {
-            evt.preventDefault();
-            gererProduitsAsynchrone(evt.target.form)
-        }
+        evt => evt.target.form.submit()
     )
 );
+
+// Méthode utilisant la technique Ajax
+// document.querySelectorAll("form.controle select").forEach(
+//     eltSelect => eltSelect.addEventListener("change", 
+//         evt => {
+//             evt.preventDefault();
+//             gererProduitsAsynchrone(evt.target.form)
+//         }
+//     )
+// );
 
 async function gererProduitsAsynchrone(frm) {
     console.log("Le formulaire du SELECT qui a déclenché l'évt CHANGE : "

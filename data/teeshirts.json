@@ -2,9 +2,7 @@
 	"animaux": {
 		"theme": {
 			"fr": "Animaux",
-			"en": "Animals",
-            "es": "Animales",
-            "de": "Tiere"
+			"en": "Animals"
 		},
 		"produits": [
 			{

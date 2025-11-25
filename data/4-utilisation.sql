@@ -7,7 +7,10 @@
 --      12) Opérateurs et fonctions SQL
 --  --> 13) Commandes SQL <--
 
+-- -----------------------------------------------------------------------------
 -- A) Commande INSERT
+-- Sert à créer des nouvelles données.
+-- -----------------------------------------------------------------------------
 -- Exemple 1 : on spécifie les colonnes
 INSERT INTO theme  (id, theme) VALUES (NULL, 'Gastronomie');
 -- Exemple 2 : on ne spécifie pas les colonnes
@@ -18,7 +21,11 @@ INSERT INTO theme (theme) VALUES
     ('Musique'),
     ('Sport');
 
+-- -----------------------------------------------------------------------------
 -- B) Commande SELECT
+-- Sert à lire les données (et aussi à obtenir de l'information à partir de 
+-- ces données)
+-- -----------------------------------------------------------------------------
 -- Exemple 1 : sélection de toutes les colonnes et de toutes les lignes
 SELECT * FROM theme;
 -- OU
@@ -53,13 +60,19 @@ SELECT
             GROUP BY thm_id
         ORDER BY prix_moyen DESC;
 
+-- -----------------------------------------------------------------------------
 -- C) Commande UPDATE
+-- Sert à modifier les données
+-- -----------------------------------------------------------------------------
 -- Exemple 1 : mise à jour d'une seule ligne
 UPDATE theme SET nom = 'Sport et plein air' WHERE id = 3;
 -- Exemple 2 : mise à jour de plusieurs lignes
 UPDATE produit SET prix = prix * 1.2 WHERE prix < 20;
 
+-- -----------------------------------------------------------------------------
 -- D) Commande DELETE
+-- Sert à supprimer des enregistrements de données
+-- -----------------------------------------------------------------------------
 -- Supprimer le produit dont le prix est en bas de 20$
 DELETE FROM produit WHERE prix<20;
 -- Supprimer tous les produits ajoutés au catalogue il y a plus de 1 an.

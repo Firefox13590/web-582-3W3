@@ -7,6 +7,9 @@ include("commun/entete.inc.php");
 // Inclure la librairie de gestion du catalogue
 include("lib/catalogue.lib.php");
 
+$filtre = $_GET["filtre"] ?? "tous";
+// echo $filtre;
+
 // Intégrer le fichier JSON contenant les produits
 $catalogue = json_decode(file_get_contents("data/teeshirts.json"));
 //print_r($catalogue);
@@ -15,9 +18,17 @@ $catalogue = json_decode(file_get_contents("data/teeshirts.json"));
 $themes = [];
 $produits = [];
 
+// Chercher les produits dans la BD relationnelle MySQL
+
+$decompteProduits = 0;
+
 foreach ($catalogue as $codeTheme => $detailTheme) {
-	$themes[$codeTheme] = $detailTheme->theme->$langue;
-	$produits = array_merge($produits, $detailTheme->produits);
+	$decompteProduits += count($detailTheme->produits);
+	$themes[$codeTheme] = $detailTheme->theme->$langue ?? $detailTheme->theme->fr;
+	if($filtre==="tous" || $filtre === $codeTheme) {
+		$produits = array_merge($produits, $detailTheme->produits);
+
+	}
 }
 
 // Gestion du tri
@@ -36,9 +47,19 @@ $produits = trierProduits($produits, $tri);
 			<div class="filtre">
 				<label for="filtre">Filtrer par thème : </label>
 				<select name="filtre" id="filtre">
-					<option value="tous">Tous les produits</option>
+					<option value="tous">Tous les produits (<?= $decompteProduits; ?>)</option>
 					<?php foreach($themes as $codeTheme=>$nomTheme) : ?>
-						<option value="<?= $codeTheme; ?>"><?= $nomTheme; ?></option>
+						<option 
+							value="<?= $codeTheme; ?>"
+							<?= $filtre===$codeTheme ? "selected" : "" ; ?>
+						>
+							<?= 
+								$nomTheme 
+								. " (" 
+								. count($catalogue->$codeTheme->produits) 
+								. ")"; 
+							?>
+						</option>
 					<?php endforeach; ?>
 				</select>
 			</div>
@@ -58,12 +79,21 @@ $produits = trierProduits($produits, $tri);
 	</article>
 	<article class="principal">
 		<!-- Gabarit -->
-		<?php foreach ($produits as $prd) : ?>
+		<?php 
+		foreach ($produits as $prd) : 
+			$fichierImage = "images/produits/teeshirts/{$prd->id}.webp";
+			if(!file_exists($fichierImage)) {
+				$fichierImage = "images/produits/teeshirts/ts0000.webp";
+			}
+		?>
 			<div class="produit">
 				<span class="image">
-					<img src="images/produits/teeshirts/<?= $prd->id; ?>.webp" alt="<?= $prd->nom->$langue; ?>">
+					<img 
+						src="<?= $fichierImage; ?>" 
+						alt="<?= $prd->nom->$langue ?? $prd->nom->fr; ?>"
+					>
 				</span>
-				<span class="nom"><?= $prd->nom->$langue; ?></span>
+				<span class="nom"><?= $prd->nom->$langue ?? $prd->nom->fr; ?></span>
 				<!-- Méthode 1 : pas utilisée -->
 				<!-- <span class="prix"><?= ""; //$frmt->formatCurrency($prd->prix, "GBP"); ?></span> -->
 				<!-- Méthode 2 : préférée pour formatter rapidement -->
