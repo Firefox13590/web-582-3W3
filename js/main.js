@@ -4,23 +4,23 @@
 /*
     Gestion du formulaire *** synchrone ***
 */
-// document.querySelectorAll("form.controle select").forEach(
-//     eltSelect => eltSelect.addEventListener("change", 
-//         evt => evt.target.form.submit()
-//     )
-// );
+document.querySelectorAll("form.controle select").forEach(
+    eltSelect => eltSelect.addEventListener("change", 
+        evt => evt.target.form.submit()
+    )
+);
 
 /*
     Gestion du formulaire *** asynchrone ***
 */
-document.querySelectorAll("form.controle select").forEach(
-    eltSelect => eltSelect.addEventListener("change", 
-        evt => {
-            evt.preventDefault();
-            gererProduitsAsynchrone(evt.target.form);
-        }
-    )
-);
+// document.querySelectorAll("form.controle select").forEach(
+//     eltSelect => eltSelect.addEventListener("change", 
+//         evt => {
+//             evt.preventDefault();
+//             gererProduitsAsynchrone(evt.target.form);
+//         }
+//     )
+// );
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
