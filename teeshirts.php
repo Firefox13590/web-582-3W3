@@ -5,39 +5,30 @@ $page = "teeshirts";
 // Inclure le contenu du fichier entete.inc.php ICI
 include("commun/entete.inc.php");
 // Inclure la librairie de gestion du catalogue
-include("lib/catalogue.lib.php");
+// include("lib/catalogue.lib.php");
 
+$tri = $_GET["tri"] ?? "RAND()";
 $filtre = $_GET["filtre"] ?? "tous";
-// echo $filtre;
+$filtreSql = $filtre!="tous" ? " AND thm_id=$filtre" : "";
 
-// Intégrer le fichier JSON contenant les produits
-$catalogue = json_decode(file_get_contents("data/teeshirts.json"));
-//print_r($catalogue);
+// Intégrer la BD MySQL
+$cnx = mysqli_connect('localhost', 'root', ''); // Pas sécuritaire : à mettre caché ailleurs (plus tard)
+mysqli_set_charset($cnx, 'utf8mb4');
+mysqli_select_db($cnx, 'teetim_gr2');
+
+$themesJE = mysqli_query($cnx, "SELECT * FROM theme");
+// CODE DANGEREUX : susceptible d'attaques par INJECTION SQL
+// ON arrange ça plus tard !!!
+$produitsJE = mysqli_query($cnx, 
+	"SELECT * FROM produit WHERE cat_id=1 $filtreSql ORDER BY $tri");
 
 // Extraire les thèmes et les produits du catalogue
-$themes = [];
-$produits = [];
+$themes = mysqli_fetch_all($themesJE, MYSQLI_ASSOC);
+$produits = mysqli_fetch_all($produitsJE, MYSQLI_ASSOC);
 
-// Chercher les produits dans la BD relationnelle MySQL
+// print_r($produits);
 
-$decompteProduits = 0;
-
-foreach ($catalogue as $codeTheme => $detailTheme) {
-	$decompteProduits += count($detailTheme->produits);
-	$themes[$codeTheme] = $detailTheme->theme->$langue ?? $detailTheme->theme->fr;
-	if($filtre==="tous" || $filtre === $codeTheme) {
-		$produits = array_merge($produits, $detailTheme->produits);
-
-	}
-}
-
-// Gestion du tri
-$tri = obtenirCritereTri();
-$produits = trierProduits($produits, $tri);
-
-// Méthode 1 (pas utilisée)
-// Instancier un objet formatteur pour cette page
-// $frmt = obtenirFormatteurNombre($langue);
+$decompteProduits = count($produits);
 ?>
 <main class="page-produits page-teeshirts">
 	<article class="amorce">
@@ -48,17 +39,12 @@ $produits = trierProduits($produits, $tri);
 				<label for="filtre">Filtrer par thème : </label>
 				<select name="filtre" id="filtre">
 					<option value="tous">Tous les produits (<?= $decompteProduits; ?>)</option>
-					<?php foreach($themes as $codeTheme=>$nomTheme) : ?>
+					<?php foreach($themes as $unTheme) : ?>
 						<option 
-							value="<?= $codeTheme; ?>"
-							<?= $filtre===$codeTheme ? "selected" : "" ; ?>
+							value="<?= $unTheme["id"]; ?>"
+							<?= $filtre===$unTheme["id"] ? "selected" : "" ; ?>
 						>
-							<?= 
-								$nomTheme 
-								. " (" 
-								. count($catalogue->$codeTheme->produits) 
-								. ")"; 
-							?>
+							<?= $unTheme["nom"]; ?>
 						</option>
 					<?php endforeach; ?>
 				</select>
@@ -66,13 +52,13 @@ $produits = trierProduits($produits, $tri);
 			<div class="tri">
 				<label for="tri"><?= $_cat->etiquetteTri; ?></label>
 				<select name="tri" id="tri">
-					<option <?= ($tri=="aleatoire") ? "selected" : ""; ?> value="aleatoire"><?= $_cat->triAleatoire; ?></option>
-					<option <?= ($tri=="ventesDesc") ? "selected" : ""; ?> value="ventesDesc"><?= $_cat->triMeilleurVendeur; ?></option>
-					<option <?= ($tri=="prixAsc") ? "selected" : ""; ?> value="prixAsc"><?= $_cat->triPrixAsc; ?></option>
-					<option <?= ($tri=="prixDesc") ? "selected" : ""; ?> value="prixDesc"><?= $_cat->triPrixDesc; ?></option>
-					<option <?= ($tri=="nomAsc") ? "selected" : ""; ?> value="nomAsc"><?= $_cat->triNomAsc; ?></option>
-					<option <?= ($tri=="nomDesc") ? "selected" : ""; ?> value="nomDesc"><?= $_cat->triNomDesc; ?></option>
-					<option <?= ($tri=="dacDesc") ? "selected" : ""; ?> value="dacDesc"><?= $_cat->triNouveaute; ?></option>
+					<option <?= ($tri=="RAND()") ? "selected" : ""; ?> value="RAND()"><?= $_cat->triAleatoire; ?></option>
+					<option <?= ($tri=="ventes DESC") ? "selected" : ""; ?> value="ventes DESC"><?= $_cat->triMeilleurVendeur; ?></option>
+					<option <?= ($tri=="prix ASC") ? "selected" : ""; ?> value="prix ASC"><?= $_cat->triPrixAsc; ?></option>
+					<option <?= ($tri=="prix DESC") ? "selected" : ""; ?> value="prix DESC"><?= $_cat->triPrixDesc; ?></option>
+					<option <?= ($tri=="nom ASC") ? "selected" : ""; ?> value="nom ASC"><?= $_cat->triNomAsc; ?></option>
+					<option <?= ($tri=="nom DESC") ? "selected" : ""; ?> value="nom DESC"><?= $_cat->triNomDesc; ?></option>
+					<option <?= ($tri=="dac DESC") ? "selected" : ""; ?> value="dac DESC"><?= $_cat->triNouveaute; ?></option>
 				</select>
 			</div>
 		</form>
@@ -81,7 +67,7 @@ $produits = trierProduits($produits, $tri);
 		<!-- Gabarit -->
 		<?php 
 		foreach ($produits as $prd) : 
-			$fichierImage = "images/produits/teeshirts/{$prd->id}.webp";
+			$fichierImage = "images/produits/teeshirts/{$prd["id"]}.webp";
 			if(!file_exists($fichierImage)) {
 				$fichierImage = "images/produits/teeshirts/ts0000.webp";
 			}
@@ -90,15 +76,12 @@ $produits = trierProduits($produits, $tri);
 				<span class="image">
 					<img 
 						src="<?= $fichierImage; ?>" 
-						alt="<?= $prd->nom->$langue ?? $prd->nom->fr; ?>"
+						alt="<?= $prd["nom"]; ?>"
 					>
 				</span>
-				<span class="nom"><?= $prd->nom->$langue ?? $prd->nom->fr; ?></span>
-				<!-- Méthode 1 : pas utilisée -->
-				<!-- <span class="prix"><?= ""; //$frmt->formatCurrency($prd->prix, "GBP"); ?></span> -->
-				<!-- Méthode 2 : préférée pour formatter rapidement -->
-				<span class="prix"><?= MessageFormatter::formatMessage($langue, "{0, number, :: currency/CAD}", [$prd->prix]) ?></span>
-				<span class="ventes"><?= $prd->ventes; ?></span>
+				<span class="nom"><?= $prd["nom"]; ?></span>
+				<span class="prix"><?= MessageFormatter::formatMessage($langue, "{0, number, :: currency/CAD}", [$prd["prix"]]) ?></span>
+				<span class="ventes"><?= $prd["ventes"]; ?></span>
 			</div>
 		<?php endforeach; ?>
 	</article>
