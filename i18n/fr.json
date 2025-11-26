@@ -72,5 +72,10 @@
         "metaDesc": "Découvrez l'histoire de teeTIM, notre mission et les valeurs qui nous guident dans la création de vêtements durables et éthiques.",
         "titre": "À propos de teeTIM",
         "enConstruction": "À venir..."
+    },
+    "panier": {
+        "metaTitre": "teeTIM // Panier d'achats",
+        "metaDesc": "Votre panier d'achats.",
+        "titre": "Panier d'achats"
     }
 }

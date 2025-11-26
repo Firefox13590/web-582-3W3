@@ -71,5 +71,10 @@
         "metaDesc": "Learn about teeTIM: a student initiative creating sustainable clothing in Quebec using natural fibers and AI-assisted designs.",
         "titre": "About teeTIM",
         "enConstruction": "Coming soon..."
+    },
+    "panier": {
+        "metaTitre": "teeTIM // Cart",
+        "metaDesc": "Your Shopping Cart.",
+        "titre": "Shopping Cart"
     }
 }

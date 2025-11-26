@@ -73,6 +73,9 @@ $decompteProduits = count($produits);
 			}
 		?>
 			<div class="produit">
+				<?php if($prd["ventes"] > 0) : ?>
+					<span class="ventes"><?= $prd["ventes"]; ?></span>
+				<?php endif; ?>
 				<span class="image">
 					<img 
 						src="<?= $fichierImage; ?>" 
@@ -80,8 +83,14 @@ $decompteProduits = count($produits);
 					>
 				</span>
 				<span class="nom"><?= $prd["nom"]; ?></span>
-				<span class="prix"><?= MessageFormatter::formatMessage($langue, "{0, number, :: currency/CAD}", [$prd["prix"]]) ?></span>
-				<span class="ventes"><?= $prd["ventes"]; ?></span>
+				<span class="prix">
+					<?= 
+						MessageFormatter::formatMessage(
+							$langue, "{0, number, :: currency/CAD}", 
+							[$prd["prix"]]
+						) 
+					?>
+				</span>
 			</div>
 		<?php endforeach; ?>
 	</article>

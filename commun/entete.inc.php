@@ -46,7 +46,26 @@ $langue = determinerCodeLangue($languesDisponibles);
             <nav class="barre-logo">
                 <label for="cc-btn-responsive" class="material-icons burger">menu</label>
                 <a class="logo" href="index.php"><img src="images/logo.png" alt="<?= $_ent->logoAlt; ?>"></a>
-                <a class="material-icons panier" href="panier.php">shopping_cart</a>
+                <div class="panier-icone">
+					<label for="panier-cc" class="material-icons">shopping_cart</label>
+					<input type="checkbox" id="panier-cc">
+					<div class="sommaire-panier">
+						<div class="ligne1">
+							<span class="nb-articles">
+								<span class="etiquette">#Articles : </span>
+								<span class="nombre">2</span>
+							</span>
+							<label for="panier-cc" class="material-icons">close</label>
+						</div>
+						<div class="ligne2">
+							<span class="sous-titre">Sous-total du panier</span>
+							<span class="sous-total montant-fr">59.00</span>
+						</div>
+						<div class="ligne3 btn-afficher-panier">
+							<a href="panier.php">Voir le panier d'achats</a>
+						</div>
+					</div>
+				</div>
                 <input class="recherche" type="search" name="motscles" placeholder="<?= $_ent->recherchePlaceholder; ?>">
             </nav>
             <input type="checkbox" id="cc-btn-responsive">
