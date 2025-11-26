@@ -1,15 +1,18 @@
 <?php
-    $page = "aide";
-    include("commun/entete.inc.php");
+$page = "aide";
+
+// Inclure le contenu du fichier entete.inc.php ICI
+include("commun/entete.inc.php");
 ?>
-    <main class="page-aide">
-        <article class="amorce">
-            <h1><?= $_->titrePage; ?></h1>
-        </article>
-        <article class="principal">
-            <?= $_->enConstruction; ?>
-        </article>
-    </main>
+<main class="page-produits page-aide">
+    <article class="amorce">
+        <h1><?= $_->titre; ?></h1>
+    </article>
+    <article class="principal">
+        <p><?= $_->enConstruction; ?></p>
+    </article>
+</main>
 <?php
-    include("commun/pied2page.inc.php");
+// Inclure la partie commune en bas de page.
+include("commun/pied2page.inc.php");
 ?>

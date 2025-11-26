@@ -1,14 +1,19 @@
 <?php
-// ATTENTION : TOUTE fonction doit avoir un commentaire de type PHPDoc.
 
 /**
- * Obtient la liste des codes de langues disponibles sur le site.
- * 
- * @return array Tableau des codes de langues en 2 lettres. 
+ * Librairie des fonctions associées au module d'internationnalisation (i18n)
  */
-function obtenirLanguesDisponibles() {
+
+/**
+ * Obtenir les langues disponibles.
+ * 
+ * @return array Tableau des codes (2 lettres) de langues disponibles.
+ */
+function obtenirLanguesDisponibles()
+{
     $langues = [];
     $contenuI18n = scandir("i18n");
+    // Améliorer ce code (à l'aide de Copilot ou vos propres idées).
     foreach ($contenuI18n as $nomFichier) {
         if ($nomFichier != "." && $nomFichier != "..") {
             $langues[] = substr($nomFichier, 0, 2);
@@ -18,54 +23,53 @@ function obtenirLanguesDisponibles() {
 }
 
 /**
- * Détermine la langue d'affichage du site.
+ * Déterminer le code de la langue active dans le site.
  * 
- * @param array $languesPermises Tableau des langues disponibles.
+ * @param array $codeLangues Tableau des codes de langues disponibles.
  * 
- * @return string Code de la langue à utiliser.
+ * @return string Chaîne représentant le code de la langue.
  */
-function determinerLangue($languesPermises) {
+function determinerCodeLangue($codesLangues)
+{
     // Langue par défaut
     $langue = "fr";
 
-    // Valeur de langue sauvgardée en cookie
-    if(isset($_COOKIE["choixLangue"]) && in_array($_COOKIE["choixLangue"], $languesPermises)) {
-        $langue = $_COOKIE["choixLangue"];
+    // Langue présélectionnée dans un cookie
+    if (isset($_COOKIE["langueChoisie"]) && in_array($_COOKIE["langueChoisie"], $codesLangues)) {
+        $langue = $_COOKIE["langueChoisie"];
     }
-
-    // Valeur de langue arrivée en paramètre URL
-    if(isset($_GET["lan"]) && in_array($_GET["lan"], $languesPermises)) {
+    // Langue choisie par l'utilisateur dans la barre de navigation
+    if (isset($_GET["lan"]) && in_array($_GET["lan"], $codesLangues)) {
         $langue = $_GET["lan"];
-        // RETENIR CE CHOIX DANS UN COOKIE!
-        setcookie("choixLangue", $langue, time() + 365*24*3600);
+        setcookie("langueChoisie", $langue, time() + 365 * 24 * 60 * 60);
     }
 
     return $langue;
 }
 
 /**
- * Obtient les textes statiques de la page à partir du fichier JSON 
- * adéquat.
+ * Obtenir les textes statiques pour l'entête, le pied de page et la page spécifique.
  * 
- * @param string $codeLangue Code de la langue.
- * @param string $nomPage Nom de la page requise.
+ * @param string $codeLangue Code de la langue dans laquelle on veut les textes.
+ * @param string $page Étiquette associée avec la page affichée.
  * 
- * @return array Tableau contenant des raccourcis pour les textes de 
- *               l'entête, du pied de page et du contenu spécifique de 
- *               la page. 
+ * @return array Tableau contenant 3 objets (entête, pied de page, page spécifique).
  */
-function obtenirTextesStatiques($codeLangue, $nomPage) {
-    // Lire le contenu du fichier des textes statiques.
-    $textesJson = file_get_contents("i18n/$codeLangue.json");
-
-    // Convertir la chaîne JSON obtenue en un tableau PHP.
-    $textes = json_decode($textesJson);
-
-    // Définir et retourner des raccourcis utiles.
+function recupererTextesStatiques($codeLangue, $page)
+{
+    $textesChaineJson =  file_get_contents("i18n/" . $codeLangue . ".json");
+    $textes = json_decode($textesChaineJson);
     return [
-            $textes->entete, 
-            $textes->pied2page, 
-            $textes->$nomPage,
-            $textes->catalogue
-        ];
+        $textes->entete,
+        $textes->pied2page,
+        $textes->$page,
+        $textes->catalogue
+    ];
 }
+
+// Méthode 1 (plus complète, mais remplacée par une façon plus rapide en une ligne)
+/*
+function obtenirFormatteurNombre($locale) {
+    return new NumberFormatter($locale, NumberFormatter::CURRENCY);
+}
+*/

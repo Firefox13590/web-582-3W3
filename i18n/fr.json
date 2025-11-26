@@ -8,121 +8,74 @@
         "menuAide": "Aide",
         "menuNous": "À propos de nous"
     },
+    
     "pied2page": {
-        "titreSectionAchats": "Vos achats",
-        "lienFaq": "Foire aux questions",
-        "lienLivraison": "Livraison de votre colis",
-        "lienConditions": "Conditions de vente",
-        "lienConfid": "Politique de confidentialité",
-        "titreSectionCompagnie": "À propos de teeTIM",
-        "lienCompagnie": "La compagnie",
-        "lienEquipe": "L'équipe",
-        "lienEmplois": "Emplois",
-        "titreSectionContact": "Nous joindre",
-        "etiquetteTel": "Sans frais : ",
-        "etiquetteCourriel": "Courriel : ",
-        "droits": "Tous droits réservés, teeTIM"
+        "aproposTitre": "À propos de teeTIM",
+        "aproposCompagnie": "La compagnie",
+        "aproposEquipe": "L'équipe",
+        "aproposEmplois": "Emplois",
+        "achatsTitre": "Vos achats",
+        "achatsFaq": "Foire aux questions",
+        "achatsLivraison": "Livraison de votre colis",
+        "achatsConditions": "Conditions de vente",
+        "achatsConfidentialite": "Politique de confidentialité",
+        "coordonneesTitre": "Nous joindre",
+        "coordonneesTelephone": "Sans frais : ",
+        "coordonneesCourriel": "Courriel : ",
+        "droits": "Tous droits réservés."
     },
     "accueil": {
         "metaTitre": "teeTIM // fibre naturelle ... conception artificielle",
         "metaDesc": "Page d'accueil du concepteur de vêtements 100% fait au Québec, conçus par les étudiants du TIM à l'aide de designs produits par intelligence artificielle, et fabriqués avec des fibres 100% naturelles et biologiques.",
-        "heroTitre": "Teeshirts, hoodies, et casquettes fabriqués au Québec 💯",
-        "heroSousTitre": "Conçus au TIM avec ❤️",
-        "heroSousTitre2": "/** avec un p'tit peu d'aide de DALL-E 😉 **/",
+        "amorceH1": "Teeshirts, hoodies, et casquettes fabriqués au Québec 💯",
+        "amorceH2": "Conçus au TIM avec ❤️",
+        "amorceH4": "/** avec un p'tit peu d'aide de DALL-E 😉 **/",
         "para1": "Aujourd'hui, le teeshirt est un vêtement incontournable dans le garde-robe de chacun. Et à l’aire où la question environnementale se pose plus que jamais, on préfère les teeshirts fabriqués au Québec afin de réduire l'impact environnemental et mettre en avant l’artisanat local.",
         "para2": "Teeshirt en V, col rond, ample ou ajusté, à manches courtes ou à manches longues pour les plus frileux, uni ou à motifs pour styliser une tenue… Le teeshirt est disponible dans une variété de couleurs, de styles et de motifs."
     },
     "catalogue": {
-        "etiquetteFiltre": "Filtrer par thème : ",
-        "etiquetteTri": "Trier par : ",
-        "aleatoire": "Aléatoire",
-        "dacDesc": "Nouveauté",
-        "prixAsc": "Prix / ascendant",
-        "prixDesc": "Prix / descendant",
-        "nomAsc": "Alpha / ascendant",
-        "nomDesc": "Alpha / descendant",
-        "ventesDesc": "Meilleur vendeur",
-        "filtreTous": "Tous les produits"
+        "etiquetteTri": "Trier par :",
+        "triAleatoire": "Aléatoire",
+        "triMeilleurVendeur": "Meilleur vendeur",
+        "triPrixAsc": "Prix / ascendant",
+        "triPrixDesc": "Prix / descendant",
+        "triNomAsc": "Alpha / ascendant",
+        "triNomDesc": "Alpha / descendant",
+        "triNouveaute": "Nouveauté"
     },
     "teeshirts": {
-        "metaTitre": "TeeTIM - Nos teeshirts",
-        "metaDesc": "Description à venir pour la page teeshirts...",
-        "titrePage": "Nos teeshirts",
+        "metaTitre": "teeTIM // Découvrez nos teeshirts 100% naturelles et conçues au Québec",
+        "metaDesc": "Découvrez notre collection de teeshirts 100% naturels, conçus au Québec par les étudiants du TIM, alliant style, confort et respect de l'environnement.",
+        "titre": "Nos teeshirts",
         "enConstruction": "À venir..."
-    }
-    ,
+    },
     "casquettes": {
-        "metaTitre": "TeeTIM - Nos casquettes",
-        "metaDesc": "Description à venir pour la page casquettes...",
-        "titrePage": "Nos casquettes",
+        "metaTitre": "teeTIM // Découvrez nos casquettes 100% naturelles et conçues au Québec",
+        "metaDesc": "Découvrez nos casquettes fabriquées localement au Québec, alliant savoir-faire artisanal, qualité supérieure et engagement envers le commerce local.",
+        "titre": "Nos casquettes",
         "enConstruction": "À venir..."
     },
     "hoodies": {
-        "metaTitre": "TeeTIM - Nos hoodies",
-        "metaDesc": "Description à venir pour la page hoodies...",
-        "titrePage": "Nos hoodies",
+        "metaTitre": "teeTIM // Découvrez nos hoodies 100% naturelles et conçues au Québec",
+        "metaDesc": "Découvrez nos hoodies fabriqués localement au Québec, alliant savoir-faire artisanal, qualité supérieure et engagement envers le commerce local.",
+        "titre": "Nos hoodies",
         "enConstruction": "À venir..."
     },
     "aide": {
-        "metaTitre": "TeeTIM - Aide",
-        "metaDesc": "Description à venir pour la page aide...",
-        "titrePage": "Aide",
+        "metaTitre": "teeTIM // Aide et FAQ",
+        "metaDesc": "Besoin d'aide ? Consultez notre section FAQ pour trouver des réponses à vos questions sur les commandes, la livraison et plus encore.",
+        "titre": "Aide et FAQ",
         "enConstruction": "À venir..."
     },
     "apropos": {
-        "metaTitre": "TeeTIM - À propos de nous",
-        "metaDesc": "Description à venir pour la page à propos de nous...",
-        "titrePage": "À propos de nous",
+        "metaTitre": "teeTIM // À propos de nous",
+        "metaDesc": "Découvrez l'histoire de teeTIM, notre mission et les valeurs qui nous guident dans la création de vêtements durables et éthiques.",
+        "titre": "À propos de teeTIM",
         "enConstruction": "À venir..."
     },
-    "panier":{
-        "metaTitre": "TeeTIM - Panier",
-        "metaDesc": "Page du Panier d'achat des produits TeeTIM",
-        "titrePage": "Votre Panier d'achat",
-        "produitTotal": "Nombre de produits: ",
-        "prixTotal": "Sous-total: ",
-        "commandeComplete": "Compléter la commande"
-    },
-    "faq": {
-        "metaTitre": "TeeTIM - FAQ",
-        "metaDesc": "Description à venir pour la page FAQ...",
-        "titrePage": "Foire aux questions",
-        "enConstruction": "À venir..."
-    },
-    "livraison": {
-        "metaTitre": "TeeTIM - Livraison",
-        "metaDesc": "Description à venir pour la page Livraison...",
-        "titrePage": "Livraison de votre colis",
-        "enConstruction": "À venir..."
-    },
-    "conditions": {
-        "metaTitre": "TeeTIM - Conditions de vente",
-        "metaDesc": "Description à venir pour la page Condition...",
-        "titrePage": "Conditions de vente",
-        "enConstruction": "À venir..."
-    },
-    "confidentialite": {
-        "metaTitre": "TeeTIM - Politique de confidentialité",
-        "metaDesc": "Description à venir pour la page Politique...",
-        "titrePage": "Politique de confidentialité",
-        "enConstruction": "À venir..."
-    },
-    "compagnie": {
-        "metaTitre": "TeeTIM - La Compagnie",
-        "metaDesc": "Description à venir pour la page Compagnie...",
-        "titrePage": "La compagnie",
-        "enConstruction": "À venir..."
-    },
-    "equipe": {
-        "metaTitre": "TeeTIM - L'équipe",
-        "metaDesc": "Description à venir pour la page Équipe...",
-        "titrePage": "L'équipe",
-        "enConstruction": "À venir..."
-    },
-    "emploi": {
-        "metaTitre": "TeeTIM - emplois",
-        "metaDesc": "Description à venir pour la page Emplois...",
-        "titrePage": "Emplois",
-        "enConstruction": "À venir..."
+    "panier": {
+        "metaTitre": "teeTIM // Panier d'achats",
+        "metaDesc": "Votre panier d'achats.",
+        "titre": "Panier d'achats"
     }
 }

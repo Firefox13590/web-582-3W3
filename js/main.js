@@ -1,84 +1,66 @@
-/******************************************************************************/
-// Seulement une des deux sections suivantes doit être active à la fois !
-/******************************************************************************/
-/*
-    Gestion du formulaire *** synchrone ***
-*/
+// 1) Méthode traditionnelle
+// Soumettre le formulaire de filtre et tri lorsqu'une option 
+// dans l'une ou l'autre des listes change.
 document.querySelectorAll("form.controle select").forEach(
     eltSelect => eltSelect.addEventListener("change", 
         evt => evt.target.form.submit()
     )
 );
 
-/*
-    Gestion du formulaire *** asynchrone ***
-*/
+// Méthode utilisant la technique Ajax
 // document.querySelectorAll("form.controle select").forEach(
 //     eltSelect => eltSelect.addEventListener("change", 
 //         evt => {
 //             evt.preventDefault();
-//             gererProduitsAsynchrone(evt.target.form);
+//             gererProduitsAsynchrone(evt.target.form)
 //         }
 //     )
 // );
-/******************************************************************************/
-/******************************************************************************/
-/******************************************************************************/
 
-/** 
-* Gérer le tri en mode asynchrone.
-* 
-* @param {HTMLFormElement} frm Le formulaire de contrôle du tri et du filtre.
-*
-* @returns {Promise<void>} Une promesse qui se résout lorsque l'opération est terminée.
-*/
 async function gererProduitsAsynchrone(frm) {
-  // Envoyer une requête HTTP, attendre la réponse HTTP
-  let reponseFiltreEtTri = await fetch("async/teeshirts.async.php?" 
-                + new URLSearchParams(new FormData(frm)).toString());
-  // Récupérer le contenu JSON de la réponse HTTP
-  let contenu = await reponseFiltreEtTri.json();
-  // Appeler une fonction qui gère la mise à jour de l'affichage
-  afficherProduits(contenu);
+    console.log("Le formulaire du SELECT qui a déclenché l'évt CHANGE : "
+        , frm);
+
+    const paramsURL = new URLSearchParams(new FormData(frm)).toString();
+
+    console.log("Chaîne des paramètres d'URL : " + paramsURL);
+    
+    
+    // Envoyer la requête HTTP adéquate
+    const reponseFiltreEtTri = await fetch("async/produits.async.php?" + paramsURL);
+    console.log("reponseFiltreEtTri : ", reponseFiltreEtTri);
+    
+    // Sortir le contenu JSON de la réponse HTTP
+    const contenu = await reponseFiltreEtTri.json();
+
+    // Modifier le UI (afficher les produits dans le tableau "contenu")
+    afficherProduits(contenu);
 }
 
-/**
- * Mettre à jour le DOM avec les produits passés en paramètre.
- * 
- * @param {Array} produits Le tableau des produits à afficher.
- * 
- * @return {void}
- */
 function afficherProduits(produits) {
-  console.log(produits);
-  // Récupérer la langue courante !
-  let langue = document.querySelector("html").lang;
+    console.log("Le tableau des produits triés et filtrés : ", produits);
+    // Vider le conteneur
+    let conteneurProduits = document.querySelector("article.principal");
+    conteneurProduits.innerHTML = "";
 
-  // Saisir le conteneur des produits
-  let conteneurProduits = document.querySelector("main.page-produits article.principal");
-  // Le vider...
-  conteneurProduits.innerHTML = "";
-  
-  // Saisir le gabarit de produit
-  let gabaritProduit = document.getElementById("gabarit-produit").content;
-  
-  let eltPrd;
-  for(let prd of produits) {
-    // On obtient un clone de l'élément contenu dans le gabarit de produit
-    eltPrd = gabaritProduit.cloneNode(true);
+    // Gabarit d'un produit
+    const gabaritProduit = document.querySelector("#gabarit-produit").content;
+    let eltProduit = null;
 
-    // À faire : implémentez le format international pour le prix ! (fait)
-    eltPrd.querySelector(".montant").innerHTML = new Intl.NumberFormat(langue, {style: "currency", currency: "CAD"}).format(prd.prix);
-    eltPrd.querySelector(".nom").innerHTML = prd.nom[langue];
-    eltPrd.querySelector(".image img").alt = prd.nom[langue];
-    eltPrd.querySelector(".image img").src = "images/produits/teeshirts/" + (prd.imageValide ? prd.id : "ts0000") + ".webp";
-    if(prd.ventes > 0){
-      eltPrd.querySelector(".ventes").innerHTML = prd.ventes;
-    }else{
-      eltPrd.querySelector(".ventes").remove();
+    // Récupérer la langue active
+    const langue = document.querySelector("html").lang;
+
+    for (const prd of produits) {
+        eltProduit = gabaritProduit.cloneNode(true);
+        eltProduit.querySelector(".image img").src 
+            = "images/produits/teeshirts/" + prd.id + ".webp";
+        eltProduit.querySelector(".image img").alt =  prd.nom[langue]; 
+        eltProduit.querySelector(".prix").innerText = prd.prix;
+        eltProduit.querySelector(".nom").innerText = prd.nom[langue];
+
+
+        // Ajouter l'élément au conteneur
+        conteneurProduits.append(eltProduit);
     }
 
-    // On insère cet élément dans le conteneur des produits
-    conteneurProduits.append(eltPrd);
-  }
 }

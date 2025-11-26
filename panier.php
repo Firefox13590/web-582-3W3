@@ -3,45 +3,48 @@ $page = "panier";
 include("commun/entete.inc.php");
 ?>
 <main class="page-panier">
-    <article class="amorce">
-        <h1><?=$_->titrePage?></h1>
-    </article>
-    <div class="produit-panier">
-        <section class="produit-haut">
-            <img class="image-produit-panier" src="images/produits/teeshirts/ts0004.webp" alt="">
-            <p class="texte-panier">Monstre Douillet</p>
-        </section>
-        <section class="produit-bas">
-            <article class="couleur-panier-vert"></article>
-            <p class="taille">M</p>
-            <p class="quantite">5</p>
-            <p class="prix">29.50$</p>
-            <label for="cc-btn-responsive" class="material-icons trash">delete</label>
-        </section>
+  <article class="amorce">
+    <h1><?= $_->titre; ?></h1>
+  </article>
+  <article class="principal">
+    <div class="liste-panier">
+      <!-- Gabarit d'un article dans le panier -->
+      <article class="item-panier" data-aid="34">
+        <div class="image-nom">
+          <div class="image">
+            <img src="images/produits/teeshirts/ts0005.webp" alt="Nom du produit ici">
+          </div>
+          <div class="nom">Produit fictif, quantité et prix aussi !</div>
+          <button class="btn-supprimer material-icons" title="Cliquez pour supprimer cet article du panier">delete</button>
+        </div>
+        <div class="qte-prix">
+          <div class="prix">
+            <span class="etiquette-prix">Prix : </span> 
+            <span class="valeur-prix montant montant-fr">29.50</span>
+          </div>
+          <div class="quantite">
+            <span class="etiquette-qte">Quantité : </span> 
+            <span class="valeur-qte">
+              <input type="number" name="quantite" value="2" min="1" max="9">
+              <button class="btn-modifier material-icons" title="Cliquez pour mettre à jour la quantité pour cet article">update</button>
+            </span>
+          </div>
+          <div class="total-article">
+            <span class="etiquette-soustotal">Sous-total : </span>
+            <span class="valeur-soustotal montant montant-fr">59.00</span>
+          </div>
+        </div>
+      </article>
+      
     </div>
-        <div class="produit-panier">
-        <section class="produit-haut">
-            <img class="image-produit-panier" src="images/produits/teeshirts/ts0005.webp" alt="">
-            <p class="texte-panier">Bleu comme une orange</p>
-        </section>
-        <section class="produit-bas">
-            <article class="couleur-panier-orange"></article>
-            <p class="taille">XS</p>
-            <p class="quantite">2</p>
-            <p class="prix">19,99$</p>
-            <label for="cc-btn-responsive" class="material-icons trash">delete</label>
-        </section>
+    <div class="sommaire-panier">
+      <span class="nb-articles">(Nombre articles <span class="nombre">2</span>)</span>
+      <span class="sous-total">
+        Sous-total :
+        <span class="montant montant-fr">59.00</span>
+      </span>
+      <span class="btn-commander">Commander</span>
     </div>
-
-    <hr>
-
-    <div class="prix-panier">
-        <p class="nombre-produit">(<?= $_->produitTotal; ?>7)</p>
-        <p class="prix-total"><?= $_->prixTotal; ?>187,48$</p>
-        <button class="commande"><?= $_->commandeComplete; ?></button>
-    </div>
-
+  </article>
 </main>
-<?php
-include("commun/pied2page.inc.php");
-?>
+<?php include('commun/pied2page.inc.php'); ?>

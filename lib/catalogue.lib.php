@@ -15,33 +15,6 @@ function obtenirCritereTri()
 }
 
 /**
-* Obtenir le critère de filtre choisi par l'utilisateur.
-* @return string Chaîne représentant le critère de filtre.
-*/
-function obtenirCritereFiltre()
-{
-   if (isset($_GET["filtre"]) && $_GET["filtre"] != "tous") {
-       return $_GET["filtre"];
-   } else {
-       return "tous";
-   }
-}
-
-/**
- * Filtrer les produits selon le critère choisi.
- * 
- * @param array $produits Tableau des produits à filtrer.
- * @param string $filtre Critère de filtre.
- * 
- * @return array Tableau des produits filtrés.
- */
-function filtrerProduits($produits, $filtre){
-    global $catalogue;
-    if($filtre != "tous") return $catalogue->$filtre->produits;
-    return $produits;
-}
-
-/**
  * Trier les produits selon le critère choisi.
  * 
  * @param array $produits Tableau des produits à trier.
@@ -90,14 +63,11 @@ function prixAsc($prd1, $prd2)
  */
 function prixDesc($prd1, $prd2)
 {
-    return prixAsc($prd2, $prd1);
+    return $prd2->prix - $prd1->prix;
 }
 
 
-/******************************************************************************/
-/************ Les fonctions suivantes sont à implémenter plus tard. ***********/
-/******************************************************************************/
-
+/* Les fonctions suivantes sont à implémenter plus tard... */
 /**
  * Comparer deux produits selon le nom (ordre alphabétique croissant).
  * @param object $prd1 Premier produit à comparer.
@@ -106,11 +76,9 @@ function prixDesc($prd1, $prd2)
  */
 function nomAsc($prd1, $prd2)
 {
-    // global $langue;
-    $langue = $_COOKIE["choixLangue"] ?? 'fr';
-    $collateur = new Collator($langue);
-
-    return $collateur->compare($prd1->nom->$langue, $prd2->nom->$langue);
+    global $langue;
+    $classificateur = new Collator($langue);
+    return $classificateur->compare($prd1->nom->$langue, $prd2->nom->$langue);
 }
 
 /**
@@ -121,6 +89,7 @@ function nomAsc($prd1, $prd2)
  */
 function nomDesc($prd1, $prd2)
 {
+    global $langue;
     return nomAsc($prd2, $prd1);
 }
 
@@ -132,5 +101,6 @@ function nomDesc($prd1, $prd2)
  */
 function dacDesc($prd1, $prd2)
 {
-    return strcmp($prd2->dac, $prd1->dac);
+    global $langue;
+    return 0;
 }
