@@ -1,4 +1,15 @@
 <?php
+// Activer la session PHP (gestion "session utilisateur")
+session_start();
+
+/****************
+ * GESTION PANIER D'ACHATS
+ ***************/
+include("lib/sql.lib.php");
+include("lib/panier.lib.php");
+$cnx = connexion();
+$idPanier = validerPanierSession($cnx);
+
 // Inclure le fichier de la librairie i18n
 include("lib/i18n.lib.php");
 
@@ -11,7 +22,6 @@ $langue = determinerCodeLangue($languesDisponibles);
 // Obtenir les textes et les mettres dans les raccourcis utilisés dans le site.
 // On utilise l'affectation par "épandage" ou destructuration ;-) (destructuring assignment)
 [$_ent, $_pp, $_, $_cat] = recupererTextesStatiques($langue, $page);
-
 ?>
 <!DOCTYPE html>
 <html lang="<?= $langue; ?>">

@@ -1,33 +1,16 @@
 <?php
-// echo uniqid('teetim', true);
-
 // Indiquer la page
 $page = "teeshirts";
 
 // Inclure le contenu du fichier entete.inc.php ICI
 include("commun/entete.inc.php");
-// Inclure la librairie de gestion du catalogue
-// include("lib/catalogue.lib.php");
+include("lib/catalogue.lib.php");
 
 $tri = $_GET["tri"] ?? "RAND()";
 $filtre = $_GET["filtre"] ?? "tous";
-$filtreSql = $filtre!="tous" ? " AND themeId=$filtre" : "";
 
-// Intégrer la BD MySQL
-$cnx = mysqli_connect('localhost', 'root', ''); // Pas sécuritaire : à mettre caché ailleurs (plus tard)
-mysqli_set_charset($cnx, 'utf8mb4');
-mysqli_select_db($cnx, 'teetim');
-
-$themesJE = mysqli_query($cnx, "SELECT * FROM themes");
-// CODE DANGEREUX : susceptible d'attaques par INJECTION SQL
-// ON arrange ça plus tard !!!
-$produitsJE = mysqli_query($cnx, 
-	"SELECT * FROM produits WHERE categorieId=1 $filtreSql ORDER BY $tri");
-
-// Extraire les thèmes et les produits du catalogue
-$themes = mysqli_fetch_all($themesJE, MYSQLI_ASSOC);
-$produits = mysqli_fetch_all($produitsJE, MYSQLI_ASSOC);
-
+$themes = obtenirThemes($cnx);
+$produits = obtenirProduits($cnx, 1, $filtre, $tri);
 // print_r($produits);
 
 $decompteProduits = count($produits);
@@ -93,6 +76,7 @@ $decompteProduits = count($produits);
 						) 
 					?>
 				</span>
+				<button class="btn-ajouter">Ajouter au panier</button>
 			</div>
 		<?php endforeach; ?>
 	</article>
