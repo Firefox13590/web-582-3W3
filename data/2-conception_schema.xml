@@ -52,7 +52,7 @@
 </key>
 <comment>les catégories de produits</comment>
 </table>
-<table x="866" y="330" name="produits">
+<table x="830" y="280" name="produits">
 <row name="id" null="0" autoincrement="1">
 <datatype>SMALLINT</datatype>
 </row>
@@ -68,6 +68,9 @@
 <row name="prix" null="0" autoincrement="0">
 <datatype>DECIMAL(5,2)</datatype>
 </row>
+<row name="fichierImage" null="0" autoincrement="0">
+<datatype>CHAR(11)</datatype>
+<default>'ts0000.webp'</default></row>
 <row name="themeId" null="0" autoincrement="0">
 <datatype>TINYINT</datatype>
 <relation table="themes" row="id" />
@@ -99,5 +102,38 @@
 <part>nom</part>
 </key>
 <comment>les thèmes de produits</comment>
+</table>
+<table x="1134" y="530" name="panier">
+<row name="id" null="0" autoincrement="1">
+<datatype>MEDIUMINT</datatype>
+</row>
+<row name="codeSerie" null="0" autoincrement="0">
+<datatype>CHAR(29)</datatype>
+</row>
+<row name="dateModif" null="0" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="1153" y="111" name="panierArticles">
+<row name="id" null="0" autoincrement="1">
+<datatype>INT</datatype>
+</row>
+<row name="produitId" null="0" autoincrement="0">
+<datatype>SMALLINT</datatype>
+<relation table="produits" row="id" />
+</row>
+<row name="qty" null="0" autoincrement="0">
+<datatype>TINYINT</datatype>
+<default>1</default></row>
+<row name="panierId" null="0" autoincrement="0">
+<datatype>MEDIUMINT</datatype>
+<relation table="panier" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
 </table>
 </sql>

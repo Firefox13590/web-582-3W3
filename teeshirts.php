@@ -1,4 +1,6 @@
 <?php
+// echo uniqid('teetim', true);
+
 // Indiquer la page
 $page = "teeshirts";
 
@@ -9,18 +11,18 @@ include("commun/entete.inc.php");
 
 $tri = $_GET["tri"] ?? "RAND()";
 $filtre = $_GET["filtre"] ?? "tous";
-$filtreSql = $filtre!="tous" ? " AND thm_id=$filtre" : "";
+$filtreSql = $filtre!="tous" ? " AND themeId=$filtre" : "";
 
 // Intégrer la BD MySQL
 $cnx = mysqli_connect('localhost', 'root', ''); // Pas sécuritaire : à mettre caché ailleurs (plus tard)
 mysqli_set_charset($cnx, 'utf8mb4');
-mysqli_select_db($cnx, 'teetim_gr2');
+mysqli_select_db($cnx, 'teetim');
 
-$themesJE = mysqli_query($cnx, "SELECT * FROM theme");
+$themesJE = mysqli_query($cnx, "SELECT * FROM themes");
 // CODE DANGEREUX : susceptible d'attaques par INJECTION SQL
 // ON arrange ça plus tard !!!
 $produitsJE = mysqli_query($cnx, 
-	"SELECT * FROM produit WHERE cat_id=1 $filtreSql ORDER BY $tri");
+	"SELECT * FROM produits WHERE categorieId=1 $filtreSql ORDER BY $tri");
 
 // Extraire les thèmes et les produits du catalogue
 $themes = mysqli_fetch_all($themesJE, MYSQLI_ASSOC);
@@ -67,10 +69,10 @@ $decompteProduits = count($produits);
 		<!-- Gabarit -->
 		<?php 
 		foreach ($produits as $prd) : 
-			$fichierImage = "images/produits/teeshirts/{$prd["id"]}.webp";
-			if(!file_exists($fichierImage)) {
-				$fichierImage = "images/produits/teeshirts/ts0000.webp";
-			}
+			$fichierImage = "images/produits/teeshirts/{$prd['fichierImage']}";
+			// if(!file_exists($fichierImage)) {
+			// 	$fichierImage = "images/produits/teeshirts/ts0000.webp";
+			// }
 		?>
 			<div class="produit">
 				<?php if($prd["ventes"] > 0) : ?>
