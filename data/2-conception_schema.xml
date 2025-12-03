@@ -107,7 +107,7 @@
 <row name="id" null="0" autoincrement="1">
 <datatype>MEDIUMINT</datatype>
 </row>
-<row name="codeSerie" null="0" autoincrement="0">
+<row name="codePanier" null="0" autoincrement="0">
 <datatype>CHAR(29)</datatype>
 </row>
 <row name="dateModif" null="0" autoincrement="0">
@@ -134,6 +134,10 @@
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>
+</key>
+<key type="UNIQUE" name="">
+<part>produitId</part>
+<part>panierId</part>
 </key>
 </table>
 </sql>

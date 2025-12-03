@@ -6,11 +6,15 @@
  * 
  * @return mysqli Ressource de connexion à la base de données.
  */
-function connexion(){
+function connexion(): mysqli{
     // Intégrer la BD MySQL
     $cnx = mysqli_connect('localhost', 'root', ''); // Pas sécuritaire : à mettre caché ailleurs (plus tard)
     mysqli_set_charset($cnx, 'utf8mb4');
     mysqli_select_db($cnx, 'teetim');
+
+    // Pas de error handling pour l'instant
+    // mysqli_report(MYSQLI_REPORT_OFF);
+
     return $cnx;
 }
 
@@ -22,7 +26,7 @@ function connexion(){
  * 
  * @return mysqli_result|bool Résultat de la requête ou false en cas d'échec.
  */
-function soumettreRequete($cnx, $requeteSql){
+function soumettreRequete(mysqli $cnx, string $requeteSql): mysqli_result|bool{
     $resultat = mysqli_query($cnx, $requeteSql);
     return $resultat;
 }
@@ -40,7 +44,7 @@ function soumettreRequete($cnx, $requeteSql){
  * 
  * @return int Identifiant de la nouvelle entrée créée.
  */
-function create($cnx, $requete){
+function create(mysqli $cnx, string $requete): int{
     $resultat = soumettreRequete($cnx, $requete);
     return mysqli_insert_id($cnx);
 }
@@ -53,7 +57,7 @@ function create($cnx, $requete){
  * 
  * @return array Tableau des entrées lues.
  */
-function read($cnx, $requete){
+function read(mysqli $cnx, string $requete): array{
     $resultat = soumettreRequete($cnx, $requete);
     return mysqli_fetch_all($resultat, MYSQLI_ASSOC);
 }
@@ -64,9 +68,9 @@ function read($cnx, $requete){
  * @param mysqli $cnx Ressource de connexion à la base de données.
  * @param string $requete Requête SQL pour mettre à jour l'entrée.
  * 
- * @return int Nombre de lignes affectées.
+ * @return string|int Nombre de lignes affectées.
  */
-function update($cnx, $requete){
+function update(mysqli $cnx, string $requete): string|int{
     $resultat = soumettreRequete($cnx, $requete);
     return mysqli_affected_rows($cnx);
 }
@@ -79,7 +83,7 @@ function update($cnx, $requete){
  * 
  * @return int Nombre de lignes affectées.
  */
-function delete($cnx, $requete){
+function delete(mysqli $cnx, string $requete): int{
     $resultat = soumettreRequete($cnx, $requete);
     return mysqli_affected_rows($cnx);
 }

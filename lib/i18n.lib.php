@@ -9,7 +9,7 @@
  * 
  * @return array Tableau des codes (2 lettres) de langues disponibles.
  */
-function obtenirLanguesDisponibles()
+function obtenirLanguesDisponibles(): array
 {
     $langues = [];
     $contenuI18n = scandir("i18n");
@@ -29,7 +29,7 @@ function obtenirLanguesDisponibles()
  * 
  * @return string Chaîne représentant le code de la langue.
  */
-function determinerCodeLangue($codesLangues)
+function determinerCodeLangue(array $codesLangues): string
 {
     // Langue par défaut
     $langue = "fr";
@@ -55,7 +55,7 @@ function determinerCodeLangue($codesLangues)
  * 
  * @return array Tableau contenant 3 objets (entête, pied de page, page spécifique).
  */
-function recupererTextesStatiques($codeLangue, $page)
+function recupererTextesStatiques(string $codeLangue, string $page): array
 {
     $textesChaineJson =  file_get_contents("i18n/" . $codeLangue . ".json");
     $textes = json_decode($textesChaineJson);

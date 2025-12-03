@@ -88,7 +88,8 @@ CREATE TABLE `panierArticles` (
   `produitId` SMALLINT NOT NULL,
   `qty` TINYINT NOT NULL DEFAULT 1,
   `panierId` MEDIUMINT NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY (`produitId`, `panierId`);
 );
 
 -- ---

@@ -8,7 +8,11 @@ session_start();
 include("lib/sql.lib.php");
 include("lib/panier.lib.php");
 $cnx = connexion();
-$idPanier = validerPanierSession($cnx);
+$panierId = validerPanierSession($cnx);
+
+// Obtenir le detail du panier pour ajuster UI sommaire panier
+$detailPanier = obtenirDetailPanier($cnx, $panierId);
+// print_r($detailPanier);
 
 // Inclure le fichier de la librairie i18n
 include("lib/i18n.lib.php");

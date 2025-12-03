@@ -57,7 +57,7 @@ $decompteProduits = count($produits);
 			// 	$fichierImage = "images/produits/teeshirts/ts0000.webp";
 			// }
 		?>
-			<div class="produit">
+			<div class="produit" data-produit-id="<?= $prd["id"]; ?>">
 				<?php if($prd["ventes"] > 0) : ?>
 					<span class="ventes"><?= $prd["ventes"]; ?></span>
 				<?php endif; ?>

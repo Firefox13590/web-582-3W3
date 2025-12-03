@@ -5,8 +5,10 @@
  * Obtenir la liste des thèmes disponibles dans le catalogue.
  * 
  * @param mysqli $cnx Ressource de connexion à la base de données.
+ * 
+ * @return array Tableau des thèmes disponibles.
  */
-function obtenirThemes($cnx){
+function obtenirThemes(mysqli $cnx): array{
     return read($cnx, "SELECT * FROM themes");
 }
 
@@ -20,7 +22,7 @@ function obtenirThemes($cnx){
  * 
  * @return array Tableau des produits correspondant aux critères.
  */
-function obtenirProduits($cnx, $categorieId, $filtre = 'tous', $tri = 'RAND()'){
+function obtenirProduits(mysqli $cnx, int $categorieId, string $filtre = 'tous', string $tri = 'RAND()'): array{
     $clauseFiltre = ($filtre == 'tous') ? "" : " AND themeId=$filtre";
     return read($cnx, 
         "SELECT * 
